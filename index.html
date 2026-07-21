@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Honorary Consulate of the Republic of Latvia in Kharkiv</title>
+<meta name="description" content="Official website of the Honorary Consulate of the Republic of Latvia in Kharkiv — a digital platform of Latvian–Ukrainian cooperation.">
+<style>
+  :root{
+    --brand-50:#fbf3f4; --brand-500:#a83848; --brand-600:#9e3039; --brand-700:#7a1f27;
+    --ink:#1a1a1a; --ink-soft:#3a3a3a; --ink-muted:#6b6b6b;
+    --surface:#ffffff; --surface-alt:#faf7f5; --border:#e7e2df;
+    --content:1200px;
+    --font-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,sans-serif;
+    --font-display:'Fraunces',Georgia,'Times New Roman',serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-sans); background:var(--surface); color:var(--ink);
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    font-size:16px; line-height:1.55;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display); letter-spacing:-.01em; font-weight:600; margin:0}
+  h1{font-size:clamp(2rem,4.5vw,3.75rem); line-height:1.05}
+  h2{font-size:clamp(1.5rem,3vw,2.25rem); line-height:1.15}
+  h3{font-size:1.25rem; line-height:1.25}
+  p{margin:0}
+  a{color:inherit; text-decoration:none}
+  img,svg{display:block; max-width:100%}
+  button{font:inherit; cursor:pointer; border:0; background:none; color:inherit}
+  ul{margin:0; padding:0; list-style:none}
+  ::selection{background:var(--brand-600); color:#fff}
+  :focus-visible{outline:2px solid var(--brand-600); outline-offset:2px; border-radius:2px}
+  hr{border:0; border-top:1px solid var(--border); margin:0}
+
+  .container{max-width:var(--content); margin:0 auto; padding:0 20px}
+  @media(min-width:768px){ .container{padding:0 32px} }
+
+  .flag-stripe{display:flex; flex-direction:column}
+  .flag-stripe>div:nth-child(1),.flag-stripe>div:nth-child(3){height:6px; background:var(--brand-600)}
+  .flag-stripe>div:nth-child(2){height:3px; background:#fff}
+
+  .kicker{display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.18em; color:var(--brand-700)}
+  .kicker::before{content:""; display:inline-block; width:22px; height:2px; background:currentColor}
+
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 20px; font-size:14px; font-weight:600; transition:.15s ease; border:1px solid transparent; cursor:pointer}
+  .btn-primary{background:var(--brand-600); color:#fff}
+  .btn-primary:hover{background:var(--brand-700)}
+  .btn-outline{border-color:var(--ink); color:var(--ink); background:transparent}
+  .btn-outline:hover{background:var(--ink); color:#fff}
+  .btn-ghost{color:var(--brand-700); font-weight:600; font-size:14px}
+  .btn-ghost:hover{color:var(--brand-600)}
+
+  .card{display:block; padding:24px; background:#fff; border:1px solid var(--border); transition:.15s ease}
+  .card:hover{border-color:var(--brand-600)}
+  .divider-red{height:3px; width:48px; background:var(--brand-600)}
+  .tag{display:inline-block; font-size:10px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; background:var(--brand-50); color:var(--brand-700); padding:4px 10px}
+  .chip{display:inline-block; font-size:11px; letter-spacing:.1em; text-transform:uppercase; border:1px solid var(--border); padding:4px 10px; color:var(--ink-soft)}
+
+  header.site{position:sticky; top:0; z-index:40; background:rgba(255,255,255,.96); backdrop-filter:blur(6px); border-bottom:1px solid var(--border)}
+  .header-row{display:flex; align-items:center; gap:16px; padding:16px 0}
+  .brand{display:flex; align-items:center; gap:12px}
+  .brand-mark{width:44px; height:44px; flex-shrink:0}
+  .brand-text .t1{font-family:var(--font-display); font-size:15px; font-weight:600}
+  .brand-text .t2{font-size:11px; text-transform:uppercase; letter-spacing:.15em; color:var(--ink-muted); margin-top:2px}
+  .lang-switch{display:flex; gap:4px; margin-left:auto}
+  .lang-switch button{padding:6px 10px; font-size:12px; font-weight:600; letter-spacing:.1em; color:var(--ink-muted); border-radius:2px}
+  .lang-switch button.active{color:var(--brand-700)}
+  .lang-switch button:hover{color:var(--ink)}
+  .menu-toggle{display:none; width:36px; height:36px; align-items:center; justify-content:center}
+  .menu-toggle span{display:block; height:2px; width:22px; background:var(--ink); margin:3px 0; transition:.2s}
+  .menu-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .menu-toggle.open span:nth-child(2){opacity:0}
+  .menu-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  nav.primary{display:flex; align-items:center; gap:24px; padding-bottom:12px; overflow-x:auto; font-size:13px; font-weight:500}
+  nav.primary::-webkit-scrollbar{display:none}
+  nav.primary a{white-space:nowrap; padding-bottom:4px; border-bottom:2px solid transparent; color:var(--ink-soft); transition:.15s}
+  nav.primary a:hover{color:var(--ink); border-color:var(--border)}
+  nav.primary a.active{color:var(--brand-700); border-color:var(--brand-600)}
+  @media(max-width:1023px){
+    .menu-toggle{display:flex}
+    nav.primary{display:none}
+    nav.primary.mobile-open{display:flex; flex-direction:column; align-items:stretch; gap:0; padding:8px 0 20px}
+    nav.primary.mobile-open a{padding:12px 0; border-bottom:1px solid var(--border); border-top:none}
+    nav.primary.mobile-open a.active{color:var(--brand-700)}
+  }
+
+  section.hero{position:relative; overflow:hidden}
+  .hero-bg{position:absolute; inset:0; z-index:-1; opacity:.04; background:
+    radial-gradient(circle at 90% 0%, #9e3039 0%, transparent 45%),
+    radial-gradient(circle at 0% 100%, #9e3039 0%, transparent 40%)}
+  .hero-grid{display:grid; grid-template-columns:1fr; gap:40px; padding:64px 0}
+  @media(min-width:1024px){ .hero-grid{grid-template-columns:2fr 1fr; padding:96px 0} }
+  .hero-cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:32px}
+  .hero-lead{font-size:clamp(1.05rem,1.6vw,1.25rem); color:var(--ink-soft); margin-top:24px; max-width:640px; line-height:1.6}
+  aside.hero-side{border-left:1px solid var(--border); padding-left:32px}
+  @media(max-width:1023px){ aside.hero-side{border-left:none; padding-left:0; border-top:1px solid var(--border); padding-top:32px} }
+  aside.hero-side .label{font-size:11px; text-transform:uppercase; letter-spacing:.15em; color:var(--brand-700); font-weight:600}
+  aside.hero-side ul{margin-top:16px; display:flex; flex-direction:column; gap:8px}
+  aside.hero-side ul li{display:flex; align-items:center; gap:8px; font-size:14px; color:var(--ink-soft)}
+  aside.hero-side ul li::before{content:""; width:6px; height:6px; background:var(--brand-600); border-radius:999px}
+
+  .welcome{background:var(--surface-alt)}
+  .welcome-grid{display:grid; grid-template-columns:1fr; gap:40px; padding:64px 0}
+  @media(min-width:768px){ .welcome-grid{grid-template-columns:1fr 2fr; padding:80px 0} }
+  .welcome-photo{width:160px; height:160px; background:#fff; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--ink-muted); text-align:center; padding:16px}
+  .welcome-quote{font-family:var(--font-display); font-size:clamp(1.35rem,2.5vw,1.875rem); line-height:1.35; margin-top:24px; color:var(--ink)}
+
+  .grid-2{display:grid; grid-template-columns:1fr; gap:24px}
+  @media(min-width:768px){ .grid-2{grid-template-columns:repeat(2,1fr)} }
+  .grid-3{display:grid; grid-template-columns:1fr; gap:24px}
+  @media(min-width:768px){ .grid-3{grid-template-columns:repeat(2,1fr)} }
+  @media(min-width:1024px){ .grid-3{grid-template-columns:repeat(3,1fr)} }
+  .grid-4{display:grid; grid-template-columns:1fr; gap:16px}
+  @media(min-width:640px){ .grid-4{grid-template-columns:repeat(2,1fr)} }
+  @media(min-width:1024px){ .grid-4{grid-template-columns:repeat(4,1fr)} }
+
+  .highlights{padding:64px 0 80px}
+  .highlight-icon{color:var(--brand-600); font-family:var(--font-display); font-size:28px; line-height:1}
+  .highlight-title{margin-top:16px; font-family:var(--font-display); font-size:18px; font-weight:600}
+  .highlight-text{margin-top:8px; font-size:14px; color:var(--ink-muted); line-height:1.55}
+  .highlight-cta{margin-top:16px; font-size:14px; font-weight:600; color:var(--brand-700)}
+
+  .news-section{border-top:1px solid var(--border); padding:64px 0}
+  .news-grid{display:grid; gap:48px; grid-template-columns:1fr}
+  @media(min-width:1024px){ .news-grid{grid-template-columns:2fr 1fr} }
+  .news-item{display:grid; grid-template-columns:1fr; gap:8px; padding:24px 0; border-top:1px solid var(--border)}
+  .news-item:first-of-type{border-top:0}
+  @media(min-width:768px){ .news-item{grid-template-columns:120px 1fr; gap:24px} }
+  .news-date{font-size:13px; color:var(--ink-muted)}
+  .news-title{font-family:var(--font-display); font-size:18px; font-weight:600; color:var(--ink)}
+  .news-excerpt{margin-top:8px; font-size:14px; color:var(--ink-soft)}
+  .events-list{margin-top:32px; display:flex; flex-direction:column; gap:24px}
+  .event-item{border-left:2px solid var(--brand-600); padding-left:16px}
+  .event-meta{font-size:11px; text-transform:uppercase; letter-spacing:.15em; color:var(--ink-muted)}
+  .event-title{margin-top:4px; font-family:var(--font-display); font-weight:600}
+
+  .quick{background:var(--ink); color:#fff}
+  .quick-inner{padding:64px 0 80px}
+  .quick-grid{margin-top:32px; display:grid; gap:24px; grid-template-columns:1fr}
+  @media(min-width:640px){ .quick-grid{grid-template-columns:repeat(2,1fr)} }
+  @media(min-width:1024px){ .quick-grid{grid-template-columns:repeat(4,1fr)} }
+  .quick-item{display:block; padding:24px; border:1px solid rgba(255,255,255,.15); transition:.15s}
+  .quick-item:hover{border-color:var(--brand-500); background:rgba(255,255,255,.05)}
+  .quick-item .t1{font-family:var(--font-display); font-weight:600}
+  .quick-item:hover .t1{color:var(--brand-500)}
+  .quick-item .t2{margin-top:8px; font-size:13px; color:rgba(255,255,255,.7)}
+  .quick-item .t3{margin-top:16px; font-size:11px; text-transform:uppercase; letter-spacing:.15em; color:var(--brand-500)}
+
+  .contact-strip{padding:64px 0 80px}
+  .contact-strip-box{display:grid; grid-template-columns:1fr; gap:24px; align-items:center; padding:32px; border:1px solid var(--border)}
+  @media(min-width:768px){ .contact-strip-box{grid-template-columns:1fr auto; padding:48px} }
+
+  .page-header{background:var(--surface-alt); border-bottom:1px solid var(--border); padding:64px 0}
+  @media(min-width:768px){ .page-header{padding:96px 0} }
+  .page-header .lead{font-size:1.1rem; color:var(--ink-soft); margin-top:24px; max-width:640px; line-height:1.6}
+
+  .footer-wrap{margin-top:96px; background:var(--surface-alt); border-top:1px solid var(--border)}
+  .footer-inner{padding:56px 0}
+  .footer-grid{display:grid; gap:40px; grid-template-columns:1fr}
+  @media(min-width:768px){ .footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr} }
+  .footer-col .label{font-size:11px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; color:var(--brand-700)}
+  .footer-col ul{margin-top:16px; display:flex; flex-direction:column; gap:8px; font-size:14px; color:var(--ink-soft)}
+  .footer-col a:hover{color:var(--brand-700)}
+  .footer-legal{display:flex; flex-direction:column; gap:12px; justify-content:space-between; padding-top:24px; margin-top:48px; border-top:1px solid var(--border); font-size:12px; color:var(--ink-muted)}
+  @media(min-width:768px){ .footer-legal{flex-direction:row; align-items:center} }
+  .footer-legal .links{display:flex; gap:16px; flex-wrap:wrap}
+
+  section.pad{padding:64px 0}
+  .center-note{margin-top:32px; font-size:12px; color:var(--ink-muted); font-style:italic; max-width:720px}
+
+  .do-dont{display:grid; grid-template-columns:1fr; gap:24px}
+  @media(min-width:768px){ .do-dont{grid-template-columns:1fr 1fr} }
+  .box-white{padding:32px; background:#fff; border:1px solid var(--border)}
+  .box-dark{padding:32px; background:var(--ink); color:#fff}
+  .box-dark .kicker{color:var(--brand-500)}
+  .box-dark .kicker::before{background:var(--brand-500)}
+  .list-check{margin-top:24px; display:flex; flex-direction:column; gap:12px}
+  .list-check li{display:flex; gap:12px}
+  .list-check .m{color:var(--brand-600); margin-top:2px; font-weight:600}
+  .box-dark .list-check .m{color:var(--brand-500)}
+  .box-dark .list-check li{color:rgba(255,255,255,.85)}
+
+  .emerg-band{background:var(--brand-600); color:#fff; padding:56px 0}
+  .emerg-band .grid{display:grid; grid-template-columns:1fr; gap:24px; align-items:center}
+  @media(min-width:768px){ .emerg-band .grid{grid-template-columns:2fr 1fr} }
+  .emerg-btn{display:inline-flex; align-items:center; justify-content:center; padding:14px 20px; background:#fff; color:var(--brand-700); font-weight:600; border:1px solid #fff; transition:.15s}
+  .emerg-btn:hover{background:transparent; color:#fff}
+
+  details{padding:20px 0; border-bottom:1px solid var(--border)}
+  details:first-of-type{border-top:1px solid var(--border)}
+  summary{display:flex; align-items:center; justify-content:space-between; gap:16px; cursor:pointer; font-family:var(--font-display); font-size:18px; font-weight:600; list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"; color:var(--brand-600); font-size:24px; line-height:1; transition:.15s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:12px; color:var(--ink-soft); line-height:1.6}
+
+  form.contact-form{display:grid; gap:16px; margin-top:24px}
+  form.contact-form .row-2{display:grid; gap:16px; grid-template-columns:1fr}
+  @media(min-width:640px){ form.contact-form .row-2{grid-template-columns:1fr 1fr} }
+  form.contact-form label{display:grid; gap:8px; font-size:14px; color:var(--ink-soft)}
+  form.contact-form input, form.contact-form textarea{
+    padding:10px 12px; border:1px solid var(--border); background:#fff; font:inherit; color:var(--ink);
+  }
+  form.contact-form input:focus, form.contact-form textarea:focus{border-color:var(--brand-600); outline:none}
+
+  .link-underline{text-decoration:underline; text-decoration-color:var(--brand-600); text-decoration-thickness:2px; text-underline-offset:4px}
+  .link-underline:hover{color:var(--brand-700)}
+
+  .event-row{display:grid; gap:16px; grid-template-columns:1fr; padding:32px 0; border-top:1px solid var(--border)}
+  .event-row:last-child{border-bottom:1px solid var(--border)}
+  @media(min-width:768px){ .event-row{grid-template-columns:200px 1fr; gap:32px} }
+  .event-row .date{font-family:var(--font-display); font-size:22px; font-weight:600; color:var(--brand-700)}
+  .event-row .place{font-size:12px; text-transform:uppercase; letter-spacing:.15em; color:var(--ink-muted); margin-top:4px}
+
+  .page{display:none}
+  .page.active{display:block}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+/* ============================================================
+   Dictionaries — UA / EN / LV
+   ============================================================ */
+const DICT = {
+uk:{
+  meta:{siteTitle:"Почесне консульство Латвійської Республіки у Харкові",republic:"Латвійська Республіка",honoraryConsulate:"Почесне консульство",inKharkiv:"у місті Харків"},
+  nav:{home:"Головна",consulate:"Почесне консульство",consular:"Консульська інформація",latviaKharkiv:"Латвія — Харківщина",businessBridge:"Business Bridge",innovation:"Інновації",investment:"Інвестиції",cooperation:"Співпраця",events:"Події",media:"Медіа",resources:"Корисне",contact:"Контакти"},
+  common:{readMore:"Дізнатись більше",seeAll:"Показати все",contactUs:"Звʼязатися з нами",emergency:"Екстрений звʼязок",consularDistrict:"Консульський округ",address:"Адреса",phone:"Телефон",email:"Електронна пошта",hours:"Години прийому"},
+  home:{heroKicker:"Латвійська Республіка · Почесне консульство у Харкові",heroTitle:"Дипломатичний міст між Латвією та Харківщиною",heroLead:"Офіційне представництво інтересів Латвійської Республіки в Харкові та цифрова платформа економічної, наукової й культурної співпраці двох країн.",ctaConsular:"Консульська допомога",ctaBridge:"Business Bridge",welcomeTitle:"Вітання Почесного консула",welcomeQuote:"Латвія та Україна поділяють спільну цінність свободи, права та європейського вибору. Роль Почесного консульства — робити цю спільність відчутною у щоденному житті: у гуманітарній допомозі, у бізнес-контактах, у наукових та культурних обмінах.",welcomeSignature:"Антон Семенов",welcomeRole:"Почесний консул Латвійської Республіки у Харкові",highlightsTitle:"Основні напрями",
+    highlights:[
+      {title:"Консульська допомога громадянам Латвії",text:"Оперативна підтримка громадян ЛР на території консульського округу.",href:"consular"},
+      {title:"Латвійсько-українське співробітництво",text:"Економіка, наука, освіта, культура, відбудова України.",href:"latvia-kharkiv"},
+      {title:"Business Bridge",text:"AI-платформа встановлення контактів між компаніями двох країн.",href:"business-bridge"},
+      {title:"Інституційна співпраця",text:"Партнерства з державними органами, університетами та асоціаціями.",href:"cooperation"}
+    ],
+    newsTitle:"Останні новини",
+    news:[
+      {date:"2026-07-14",tag:"Візит",title:"Робоча зустріч з представниками Ризької торговельно-промислової палати",excerpt:"Обговорено спільні напрями підтримки латвійського експорту та розвиток каналів інвестування в економіку Харківщини."},
+      {date:"2026-06-30",tag:"Освіта",title:"Меморандум про співпрацю з Ризьким технічним університетом",excerpt:"Підписано документ, що відкриває шлях до спільних наукових проєктів та академічної мобільності."},
+      {date:"2026-06-12",tag:"Культура",title:"Дні латиської культури у Харкові — програма",excerpt:"Тижнева програма кіно, музики та літературних читань за участю латвійських і українських митців."}
+    ],
+    eventsTitle:"Найближчі події",
+    events:[
+      {date:"2026-08-05",place:"Харків",title:"Форум «Латвія — Харківщина: відбудова та інновації»"},
+      {date:"2026-09-11",place:"Рига",title:"Бізнес-місія харківських підприємств до Латвії"},
+      {date:"2026-10-02",place:"Харків",title:"День державності Латвійської Республіки — прийом"}
+    ],
+    quickTitle:"Швидкі посилання",
+    quick:[
+      {title:"Посольство Латвії в Україні",text:"Візи, повний перелік консульських послуг",href:"https://www2.mfa.gov.lv"},
+      {title:"Міністерство закордонних справ ЛР",text:"Офіційні заяви та інформація",href:"https://www.mfa.gov.lv"},
+      {title:"LIAA — інвестиційне агентство",text:"Інвестування, експорт, туризм",href:"https://www.liaa.gov.lv"},
+      {title:"Latvia.Travel",text:"Офіційний туристичний портал Латвії",href:"https://www.latvia.travel"}
+    ],
+    contactStripTitle:"Потрібна консультація або допомога?",
+    contactStripLead:"Ми відповідаємо на офіційні запити протягом двох робочих днів. Для екстрених ситуацій — цілодобова лінія."
+  },
+  consulate:{kicker:"Про Почесне консульство",title:"Почесне консульство Латвійської Республіки у Харкові",lead:"Почесне консульство діє на підставі Віденської конвенції про консульські зносини 1963 року та відповідних актів Міністерства закордонних справ Латвійської Республіки.",
+    history:{title:"Історія",body:"Почесне консульство створене з метою поглиблення двосторонніх відносин між Латвією та Україною, зокрема на сході країни, а також для сприяння громадянам ЛР, що перебувають на території консульського округу."},
+    mission:{title:"Місія",body:"Захист інтересів та гідності Латвійської Республіки, сприяння громадянам ЛР, а також розвиток економічних, наукових, освітніх і культурних звʼязків між Латвією та Харківщиною."},
+    powers:{title:"Повноваження",body:"Обсяг повноважень Почесного консульства визначається Міністерством закордонних справ Латвійської Республіки та Посольством ЛР в Україні відповідно до чинного законодавства."},
+    district:{title:"Консульський округ",body:"Діяльність Почесного консульства охоплює адміністративно-територіальні одиниці, визначені актом про відкриття консульства.",oblasts:["Харківська область","Полтавська область","Сумська область"]},
+    consul:{title:"Почесний консул",name:"Антон Семенов",role:"Почесний консул Латвійської Республіки у Харкові",bio:"Підприємець і громадський діяч, який упродовж багатьох років працює над розвитком міжнародних економічних і культурних звʼязків. Обраний Почесним консулом за поданням Міністерства закордонних справ Латвійської Республіки."},
+    team:{title:"Команда",body:"У щоденній роботі Почесному консулу допомагає команда фахівців.",roles:[{name:"Канцелярія",role:"Загальні звернення, документообіг"},{name:"Консульський напрям",role:"Допомога громадянам ЛР"},{name:"Економічний напрям",role:"Business Bridge, інвестиції"},{name:"Культурний напрям",role:"Освітні та культурні проєкти"}]},
+    doTitle:"Що робить Почесне консульство",
+    doList:["Надає допомогу громадянам Латвійської Республіки в межах повноважень, визначених МЗС ЛР.","Сприяє поглибленню двосторонніх економічних, наукових, освітніх та культурних звʼязків.","Підтримує візити офіційних делегацій Латвійської Республіки на території округу.","Забезпечує обмін офіційною інформацією між українськими інституціями та Посольством ЛР.","Ініціює й координує культурно-просвітницькі програми з популяризації Латвії."],
+    dontTitle:"Що НЕ входить до компетенції",
+    dontList:["Оформлення віз, паспортів та інших офіційних документів — здійснюється Посольством ЛР в Україні.","Комерційне посередництво в інтересах окремих приватних компаній.","Публічна підтримка або рекомендація конкретних юридичних осіб чи брендів.","Ухвалення рішень щодо надання громадянства, статусу або офіційних дозволів.","Розгляд судових спорів та надання юридичних послуг у власних інтересах."],
+    legalNote:"Почесне консульство діє відповідно до Віденської конвенції 1963 року та актів МЗС Латвійської Республіки. Усі повноваження здійснюються під наглядом Посольства ЛР в Україні."
+  },
+  consular:{kicker:"Консульська інформація",title:"Допомога громадянам Латвії та довідкова інформація",lead:"Почесне консульство надає базову консульську допомогу громадянам Латвійської Республіки на території округу. Повний перелік послуг здійснюється Посольством ЛР в Україні.",
+    services:[
+      {title:"Ідентифікація та звʼязок із рідними",text:"Сприяння громадянам ЛР у встановленні звʼязку з родиною або уповноваженими особами."},
+      {title:"Тимчасові документи для повернення",text:"Сприяння отриманню документа на повернення через Посольство ЛР в Україні."},
+      {title:"Взаємодія з місцевими органами",text:"Супровід у взаємодії з правоохоронними, медичними та адміністративними структурами."},
+      {title:"Надзвичайні ситуації",text:"Оперативна підтримка у ситуаціях загрози життю або здоровʼю."}
+    ],
+    emergencyBlock:{title:"Екстрений звʼязок",body:"Для громадян Латвійської Республіки, що опинилися у надзвичайній ситуації на території округу.",button:"emergency@latviakharkiv.org"},
+    documents:{title:"Документи",body:"Перелік базових документів, які варто мати при зверненні:",items:["Паспорт громадянина ЛР або посвідчення особи (ID-карта)","Документи, що підтверджують родинні звʼязки (за потреби)","Медичні документи (у разі надання допомоги за станом здоровʼя)","Копії поліцейських протоколів (у разі втрати документів)"]},
+    embassyRedirect:{title:"Посольство Латвійської Республіки в Україні",body:"Візові питання, оформлення паспортів, легалізація документів та повний перелік консульських послуг здійснюються Посольством ЛР у Києві.",button:"Відкрити www2.mfa.gov.lv"},
+    faq:[
+      {q:"Чи оформлює Почесне консульство візи до Латвії?",a:"Ні. Оформлення віз здійснюється виключно Посольством ЛР в Україні та акредитованими візовими центрами."},
+      {q:"Чи можу я подати заяву на паспорт у Почесному консульстві?",a:"Ні. Паспортні послуги надаються Посольством ЛР. Почесне консульство може допомогти з інформацією та скеруванням."},
+      {q:"Що робити у разі втрати документів?",a:"Терміново звʼяжіться з нами за екстреною електронною адресою. Ми допоможемо оформити звернення до Посольства ЛР для отримання документа на повернення."},
+      {q:"Як записатися на прийом?",a:"Через контактну форму або на пошту reception@latviakharkiv.org. Прийом здійснюється за попереднім записом."}
+    ]
+  },
+  latviaKharkiv:{kicker:"Латвія — Харківщина",title:"Напрями двостороннього співробітництва",lead:"Харківщина — потужний науково-освітній, промисловий та інноваційний регіон України. Латвія — держава-член ЄС і НАТО з розвиненою цифровою економікою. Разом ми будуємо стійкий міст співпраці.",
+    tracks:[
+      {title:"Економіка",body:"Розширення двосторонньої торгівлі, підтримка експортерів та інвесторів.",points:["Промисловість","Агросектор","Логістика","IT та ІКТ","Оборонні технології"]},
+      {title:"Освіта",body:"Академічна мобільність, спільні програми, стипендії, обмін викладачами.",points:["Магістерські програми","Літні школи","Спільні дипломи","Erasmus+"]},
+      {title:"Наука та інновації",body:"Спільні дослідження, участь у програмах Horizon Europe та EEN.",points:["Horizon Europe","EEN","COST","EDF","BRAVE1"]},
+      {title:"Культура",body:"Літературні читання, музичні та кінофестивалі, виставки.",points:["Дні Латвії","Кінопокази","Виставки","Мовні курси"]},
+      {title:"Регіональна співпраця",body:"Побратимство міст, обмін досвідом самоврядування, спільні муніципальні проєкти.",points:["Побратимство міст","Урбаністика","Смарт-міста","Транспорт"]},
+      {title:"Відбудова України",body:"Латвія — один із найактивніших партнерів у відбудові Харківщини.",points:["Житло","Енергетика","Розмінування","Медицина"]}
+    ]
+  },
+  bridge:{kicker:"Latvia–Ukraine Business Bridge",title:"AI-платформа співробітництва компаній",lead:"Business Bridge — це дипломатична цифрова платформа, що допомагає латвійським і українським компаніям знаходити партнерів, ринки та спільні проєкти. Ми не є комерційним посередником — ми знижуємо барʼєри для якісних контактів.",
+    forUa:{title:"Для українських компаній",body:"Реєструйте компанію, презентуйте продукцію та технології, отримуйте партнерів у Латвії та ЄС.",bullets:["Верифікація ЄДРПОУ та юридичного статусу","Профіль компанії з описом продукції, КВЕД, NACE, TRL","Автоматичний пошук латвійських партнерів","Доступ до європейських програм: Horizon Europe, EDF, EEN"]},
+    forLv:{title:"Для латвійських компаній",body:"Виходьте на український ринок з надійним партнером, знаходьте постачальників, R&D-центри та кадри.",bullets:["Верифікація Uzņēmumu reģistrs","Профіль компанії з NACE, продукцією та ринками","Автоматичний матчинг із українськими підприємствами","Підтримка інтеграції у ланцюги ЄС і НАТО"]},
+    howItWorks:{title:"Як працює платформа",steps:[{title:"Реєстрація та верифікація",body:"Компанія створює обліковий запис і проходить верифікацію через державні реєстри."},{title:"Профіль",body:"Опис продукції, технологій, ринків, сертифікації, ключових слів та потреб."},{title:"AI Matchmaking",body:"Алгоритм пропонує партнерів на основі сумісності профілів і сигналів."},{title:"Контакт",body:"Пряма комунікація, супровід зустрічей, підтримка на подіях і бізнес-місіях."}]},
+    ai:{title:"AI Matchmaking",lead:"Алгоритм враховує понад двадцять сигналів, від виду діяльності до участі у європейських програмах, і пропонує партнерів у режимі реального часу.",
+      signals:["Вид діяльності (КВЕД / NACE)","Продукція та технології","Ринки та експортна географія","TRL — рівень технологічної готовності","Dual-use / civil / defense","Сертифікації та стандарти","Ключові слова","Потреби у партнерах"],
+      programmes:["Horizon Europe","Enterprise Europe Network","European Defence Fund","SAFE","BRAVE1","COST","SDG"],
+      note:"Матчинг має рекомендаційний характер. Остаточне рішення про співпрацю ухвалюють самі компанії."
+    },
+    apply:{title:"Подати заявку",body:"Реєстрація безкоштовна для латвійських і українських юридичних осіб. Заявки розглядаються протягом 5 робочих днів.",button:"Подати заявку"},
+    disclaimer:"Business Bridge — інформаційний сервіс під егідою Почесного консульства. Присутність компанії у платформі не є офіційним схваленням або рекомендацією з боку Почесного консульства чи Латвійської Республіки."
+  },
+  innovation:{kicker:"Innovation Hub",title:"Наука, стартапи та передові технології",lead:"Латвія та Харківщина мають унікальний спільний потенціал у сфері науки, інженерії та цифрових технологій. Ми поєднуємо університети, дослідницькі центри та стартап-екосистеми.",
+    pillars:[{title:"Стартапи",body:"Підтримка українсько-латвійських стартапів через акселератори та фонди."},{title:"AI",body:"Сумісні проєкти у сфері штучного інтелекту та роботизації."},{title:"Кібербезпека",body:"Обмін експертизою з захисту критичної інфраструктури."},{title:"Digital",body:"Цифрова трансформація муніципалітетів та бізнесу."},{title:"R&D",body:"Спільні наукові консорціуми у програмах ЄС."},{title:"Transfer of Technology",body:"Комерціалізація наукових розробок."}],
+    universities:{title:"Університети та наука",body:"Ми співпрацюємо з провідними закладами вищої освіти двох країн.",list:["Ризький технічний університет (RTU)","Латвійський університет (LU)","Ризький університет ім. Страдиня (RSU)","Харківський національний університет ім. В. Н. Каразіна","Національний технічний університет «ХПІ»","Харківський національний університет радіоелектроніки (ХНУРЕ)"]}
+  },
+  investment:{kicker:"Інвестиції",title:"Двосторонні інвестиції та відбудова",lead:"Латвійський капітал — надійний партнер у відбудові та розвитку Харківщини. Український потенціал — можливість для латвійських інвесторів увійти на найбільший європейський ринок відновлення.",
+    whyKharkiv:{title:"Чому Харків",body:"Науково-промисловий центр із глибокою інженерною культурою.",bullets:["Понад 30 закладів вищої освіти","Розвинена промисловість: машинобудування, енергетика, IT","Пільги для інвесторів у межах індустріальних парків","Прямий доступ до інфраструктури ЄС через Польщу та Балтію"]},
+    whyLatvia:{title:"Чому Латвія",body:"Держава-член ЄС і НАТО з високим індексом свободи ведення бізнесу.",bullets:["Юрисдикція ЄС, прямий доступ до єдиного ринку","Розвинена цифрова інфраструктура та e-government","Три міжнародні порти та стратегічна логістика","Пільги для стартапів і IT-компаній"]},
+    recovery:{title:"Відбудова",body:"Латвія — серед перших країн, які системно долучилися до відбудови Харківщини у сферах житла, енергетики, розмінування та медицини."},
+    parks:{title:"Індустріальні парки та проєкти",body:"Каталог індустріальних парків Харківщини та актуальних інвестиційних проєктів. Оновлюється щоквартально."}
+  },
+  cooperation:{kicker:"Cooperation",title:"Інституційна та стратегічна співпраця",lead:"Почесне консульство розвиває мережу інституційної співпраці — з державними органами, дипломатичними представництвами, університетами й асоціаціями двох країн та ЄС.",
+    institutional:{title:"Institutional Cooperation",body:"Ключові інституційні партнери:",
+      groups:[
+        {title:"Державні органи",items:["Міністерство закордонних справ Латвійської Республіки","Міністерство закордонних справ України","Харківська обласна військова адміністрація","Харківська міська рада"]},
+        {title:"Дипломатичні представництва",items:["Посольство Латвійської Республіки в Україні","Посольство України в Латвійській Республіці","Мережа Почесних консульств Латвії в Європі"]},
+        {title:"Університети",items:["RTU, LU, RSU","ХНУ ім. В. Н. Каразіна, НТУ «ХПІ», ХНУРЕ"]},
+        {title:"Торгово-промислові палати та асоціації",items:["Latvian Chamber of Commerce and Industry (LTRK)","Харківська ТПП","LIAA"]},
+        {title:"Міжнародні організації та фонди",items:["Enterprise Europe Network","NATO SPS","European Investment Bank","EBRD"]}
+      ]
+    },
+    privateSector:{title:"Private Sector Cooperation",body:"Окремий блок присвячений компаніям приватного сектору, що системно долучаються до українсько-латвійських проєктів у форматі меценатства, спонсорства або партнерських ініціатив.",note:"Перелік носить інформаційний характер і не означає офіційного схвалення або рекомендації з боку Почесного консульства."}
+  },
+  events:{kicker:"Події",title:"Форуми, візити, культурні події",lead:"Календар публічних заходів Почесного консульства: бізнес-форуми, візити офіційних делегацій, культурні події та Дні Латвії.",
+    categories:["Бізнес","Форуми","Візити","Конференції","Виставки","Дні Латвії"],
+    upcoming:[
+      {date:"2026-08-05",place:"Харків",title:"Форум «Латвія — Харківщина: відбудова та інновації»",text:"Публічна панельна дискусія за участю офіційних делегацій Латвії та представників бізнесу."},
+      {date:"2026-09-11",place:"Рига",title:"Бізнес-місія харківських підприємств до Латвії",text:"Візит делегації підприємств Харківщини до Ризької ТПП та інвестиційного агентства LIAA."},
+      {date:"2026-10-02",place:"Харків",title:"День державності Латвійської Республіки — прийом",text:"Офіційний дипломатичний прийом з нагоди Дня Латвійської Республіки."},
+      {date:"2026-11-14",place:"Харків",title:"Дні латиської культури",text:"Тижнева культурна програма: кіно, музика, література, дегустація."}
+    ],
+    calendarNote:"Календар оновлюється у режимі реального часу. Для акредитації медіа — press@latviakharkiv.org."
+  },
+  media:{kicker:"Медіа",title:"Новини, фото, відео та пресрелізи",lead:"Офіційні матеріали для журналістів, партнерів і громадськості.",
+    sections:[
+      {title:"Новини",body:"Регулярні оновлення про діяльність Почесного консульства.",button:"Усі новини"},
+      {title:"Фотогалерея",body:"Візуальні матеріали з подій та візитів.",button:"Дивитись"},
+      {title:"Відео",body:"Виступи, репортажі та інтервʼю.",button:"Дивитись"},
+      {title:"Пресрелізи",body:"Офіційні заяви для ЗМІ.",button:"Завантажити"},
+      {title:"Публікації",body:"Аналітичні матеріали та звіти.",button:"Читати"}
+    ]
+  },
+  resources:{kicker:"Resources",title:"Корисна інформація",lead:"Довідкові матеріали з питань права, митниці, оподаткування, освіти та зовнішньоекономічної діяльності.",
+    categories:[
+      {title:"Право",body:"Ключові нормативні акти двох країн та ЄС.",links:[{label:"Likumi.lv",href:"https://likumi.lv"},{label:"Верховна Рада України",href:"https://zakon.rada.gov.ua"},{label:"EUR-Lex",href:"https://eur-lex.europa.eu"}]},
+      {title:"Митниця та експорт",body:"Митні тарифи, процедури, квоти.",links:[{label:"VID — Служба державних доходів Латвії",href:"https://www.vid.gov.lv"},{label:"Митниця України",href:"https://customs.gov.ua"}]},
+      {title:"Освіта",body:"Стипендії, обмінні програми, визнання дипломів.",links:[{label:"AIKA",href:"https://www.aika.lv"},{label:"Study in Latvia",href:"https://studyinlatvia.lv"}]},
+      {title:"Інвестиції та бізнес",body:"Інвестиційне середовище, підтримка експорту.",links:[{label:"LIAA",href:"https://www.liaa.gov.lv"},{label:"UkraineInvest",href:"https://ukraineinvest.gov.ua"}]}
+    ]
+  },
+  contact:{kicker:"Контакти",title:"Звʼязатися з Почесним консульством",lead:"Ми відповідаємо на офіційні запити протягом двох робочих днів. Для екстрених ситуацій діє окрема лінія цілодобово.",address:"м. Харків, Україна",hours:"Пн–Пт · 10:00 — 17:00 · за попереднім записом",
+    phones:[{label:"Канцелярія",value:"+380 57 000 00 00"},{label:"Екстрений звʼязок для громадян ЛР",value:"+380 67 000 00 00"}],
+    emails:[{label:"Загальні звернення",value:"info@latviakharkiv.org"},{label:"Консульські питання",value:"consular@latviakharkiv.org"},{label:"Екстрений звʼязок",value:"emergency@latviakharkiv.org"},{label:"Бізнес-напрям",value:"business@latviakharkiv.org"},{label:"Медіа",value:"press@latviakharkiv.org"}],
+    formTitle:"Форма звернення",formName:"Імʼя та прізвище",formEmail:"Електронна пошта",formSubject:"Тема",formMessage:"Повідомлення",formSend:"Надіслати запит",formNote:"Персональні дані обробляються відповідно до GDPR та законодавства України про захист персональних даних.",
+    emergencyTitle:"Екстрений звʼязок",emergencyBody:"Якщо ви громадянин Латвії, який опинився у надзвичайній ситуації на території округу — звʼяжіться з нами будь-яким доступним способом. Ми на звʼязку 24/7."
+  },
+  footer:{tagline:"Почесне консульство Латвійської Республіки у місті Харків",officialNote:"Офіційний ресурс. Розроблено відповідно до Графічного стандарту державного управління Латвійської Республіки (2014).",
+    legalLinks:[{label:"Правова інформація",href:"#/legal"},{label:"Політика приватності",href:"#/privacy"},{label:"Умови використання",href:"#/terms"}],
+    columns:[
+      {title:"Консульство",items:[{href:"consulate",label:"Про консульство"},{href:"consular",label:"Консульська інформація"},{href:"contact",label:"Контакти"}]},
+      {title:"Співпраця",items:[{href:"latvia-kharkiv",label:"Латвія — Харківщина"},{href:"cooperation",label:"Інституційна співпраця"},{href:"business-bridge",label:"Business Bridge"}]},
+      {title:"Ресурси",items:[{href:"events",label:"Події"},{href:"media",label:"Медіа"},{href:"resources",label:"Корисне"}]}
+    ],
+    copyright:"© 2026 Почесне консульство Латвійської Республіки у Харкові. Усі права захищено."
+  }
+},
+en:{
+  meta:{siteTitle:"Honorary Consulate of the Republic of Latvia in Kharkiv",republic:"Republic of Latvia",honoraryConsulate:"Honorary Consulate",inKharkiv:"in Kharkiv"},
+  nav:{home:"Home",consulate:"Honorary Consulate",consular:"Consular Information",latviaKharkiv:"Latvia — Kharkiv",businessBridge:"Business Bridge",innovation:"Innovation",investment:"Investment",cooperation:"Cooperation",events:"Events",media:"Media",resources:"Resources",contact:"Contact"},
+  common:{readMore:"Read more",seeAll:"See all",contactUs:"Contact us",emergency:"Emergency contact",consularDistrict:"Consular district",address:"Address",phone:"Phone",email:"E-mail",hours:"Office hours"},
+  home:{heroKicker:"Republic of Latvia · Honorary Consulate in Kharkiv",heroTitle:"A diplomatic bridge between Latvia and the Kharkiv region",heroLead:"The official representation of the interests of the Republic of Latvia in Kharkiv and a digital platform for economic, scientific and cultural cooperation between the two countries.",ctaConsular:"Consular assistance",ctaBridge:"Business Bridge",welcomeTitle:"Welcome from the Honorary Consul",welcomeQuote:"Latvia and Ukraine share a common commitment to freedom, the rule of law and the European choice. The role of the Honorary Consulate is to make that commitment tangible in daily life — in humanitarian assistance, business contacts, scientific and cultural exchange.",welcomeSignature:"Anton Semenov",welcomeRole:"Honorary Consul of the Republic of Latvia in Kharkiv",highlightsTitle:"Focus areas",
+    highlights:[
+      {title:"Consular assistance to citizens of Latvia",text:"Prompt support for citizens of the Republic of Latvia within the consular district.",href:"consular"},
+      {title:"Latvian–Ukrainian cooperation",text:"Economy, science, education, culture and the reconstruction of Ukraine.",href:"latvia-kharkiv"},
+      {title:"Business Bridge",text:"AI-driven matchmaking platform for Latvian and Ukrainian companies.",href:"business-bridge"},
+      {title:"Institutional cooperation",text:"Partnerships with state bodies, universities and associations.",href:"cooperation"}
+    ],
+    newsTitle:"Latest news",
+    news:[
+      {date:"2026-07-14",tag:"Visit",title:"Working meeting with the Riga Chamber of Commerce and Industry",excerpt:"Joint directions for supporting Latvian exporters and developing investment channels into the Kharkiv economy were discussed."},
+      {date:"2026-06-30",tag:"Education",title:"Memorandum of cooperation with Riga Technical University",excerpt:"A document was signed opening the way to joint research projects and academic mobility."},
+      {date:"2026-06-12",tag:"Culture",title:"Days of Latvian Culture in Kharkiv — programme",excerpt:"A weeklong programme of film, music and literary readings featuring Latvian and Ukrainian artists."}
+    ],
+    eventsTitle:"Upcoming events",
+    events:[
+      {date:"2026-08-05",place:"Kharkiv",title:"Forum “Latvia — Kharkiv Region: Reconstruction & Innovation”"},
+      {date:"2026-09-11",place:"Riga",title:"Business mission of Kharkiv companies to Latvia"},
+      {date:"2026-10-02",place:"Kharkiv",title:"Latvian Statehood Day reception"}
+    ],
+    quickTitle:"Quick links",
+    quick:[
+      {title:"Embassy of Latvia in Ukraine",text:"Visas, full list of consular services",href:"https://www2.mfa.gov.lv"},
+      {title:"MFA of Latvia",text:"Official statements and information",href:"https://www.mfa.gov.lv"},
+      {title:"LIAA",text:"Investment, export, tourism",href:"https://www.liaa.gov.lv"},
+      {title:"Latvia.Travel",text:"Official tourism portal of Latvia",href:"https://www.latvia.travel"}
+    ],
+    contactStripTitle:"Need a consultation or assistance?",
+    contactStripLead:"We reply to official requests within two working days. Emergency line is available 24/7."
+  },
+  consulate:{kicker:"About the Honorary Consulate",title:"Honorary Consulate of the Republic of Latvia in Kharkiv",lead:"The Honorary Consulate operates under the 1963 Vienna Convention on Consular Relations and the relevant instruments of the Ministry of Foreign Affairs of the Republic of Latvia.",
+    history:{title:"History",body:"The Honorary Consulate was established to deepen bilateral relations between Latvia and Ukraine, in particular in the east of the country, and to assist Latvian citizens present within the consular district."},
+    mission:{title:"Mission",body:"To protect the interests and dignity of the Republic of Latvia, to assist its citizens, and to develop economic, scientific, educational and cultural ties between Latvia and the Kharkiv region."},
+    powers:{title:"Powers",body:"The scope of the Honorary Consulate's powers is defined by the Ministry of Foreign Affairs of the Republic of Latvia and by the Embassy of Latvia in Ukraine in accordance with the applicable law."},
+    district:{title:"Consular district",body:"The activity of the Honorary Consulate covers the administrative units defined in the act establishing the Consulate.",oblasts:["Kharkiv Oblast","Poltava Oblast","Sumy Oblast"]},
+    consul:{title:"The Honorary Consul",name:"Anton Semenov",role:"Honorary Consul of the Republic of Latvia in Kharkiv",bio:"Entrepreneur and public figure with many years of experience developing international economic and cultural ties. Appointed as Honorary Consul on the recommendation of the Ministry of Foreign Affairs of the Republic of Latvia."},
+    team:{title:"The team",body:"In its daily work the Consulate is supported by a small team of professionals.",roles:[{name:"Chancery",role:"General enquiries and correspondence"},{name:"Consular affairs",role:"Assistance to citizens of Latvia"},{name:"Economic affairs",role:"Business Bridge, investment"},{name:"Cultural affairs",role:"Education and cultural programmes"}]},
+    doTitle:"What the Honorary Consulate does",
+    doList:["Provides assistance to citizens of the Republic of Latvia within the mandate defined by the Ministry of Foreign Affairs.","Facilitates deepening of bilateral economic, scientific, educational and cultural ties.","Supports visits by official delegations of the Republic of Latvia within the district.","Ensures the exchange of official information between Ukrainian institutions and the Embassy of Latvia.","Initiates and coordinates cultural and educational programmes promoting Latvia."],
+    dontTitle:"What is NOT within its competence",
+    dontList:["Issuance of visas, passports and other official documents — performed by the Embassy of Latvia in Ukraine.","Commercial intermediation on behalf of individual private companies.","Public endorsement or recommendation of specific legal entities or brands.","Decisions on granting citizenship, status or official permits.","Legal representation or the provision of legal services in its own interest."],
+    legalNote:"The Honorary Consulate operates under the 1963 Vienna Convention and the instruments of the Ministry of Foreign Affairs of the Republic of Latvia. All powers are exercised under the supervision of the Embassy of Latvia in Ukraine."
+  },
+  consular:{kicker:"Consular information",title:"Assistance to citizens of Latvia and reference information",lead:"The Honorary Consulate provides basic consular assistance to citizens of the Republic of Latvia within its district. The full range of consular services is delivered by the Embassy of Latvia in Ukraine.",
+    services:[
+      {title:"Identification and contact with relatives",text:"Support for citizens in establishing contact with family or authorised persons."},
+      {title:"Emergency return documents",text:"Assistance with obtaining a return document via the Embassy of Latvia in Ukraine."},
+      {title:"Liaison with local authorities",text:"Facilitation with law enforcement, medical and administrative institutions."},
+      {title:"Emergency situations",text:"Prompt support in situations threatening life or health."}
+    ],
+    emergencyBlock:{title:"Emergency contact",body:"For citizens of the Republic of Latvia who find themselves in an emergency situation within the district.",button:"emergency@latviakharkiv.org"},
+    documents:{title:"Documents",body:"Documents to have with you when contacting the Consulate:",items:["Passport or ID card of a citizen of the Republic of Latvia","Documents confirming family relations (if applicable)","Medical documents (in the case of health-related assistance)","Copies of police reports (in the case of lost documents)"]},
+    embassyRedirect:{title:"Embassy of the Republic of Latvia in Ukraine",body:"Visa matters, passport issuance, legalisation of documents and the full range of consular services are provided by the Embassy in Kyiv.",button:"Open www2.mfa.gov.lv"},
+    faq:[
+      {q:"Does the Honorary Consulate issue visas to Latvia?",a:"No. Visas are issued exclusively by the Embassy of Latvia in Ukraine and its accredited visa centres."},
+      {q:"Can I apply for a passport at the Honorary Consulate?",a:"No. Passport services are provided by the Embassy of Latvia. The Honorary Consulate can help with information and referral."},
+      {q:"What should I do if I lose my documents?",a:"Contact us immediately via the emergency e-mail. We will help you file a request to the Embassy of Latvia for a return document."},
+      {q:"How do I book an appointment?",a:"Via the contact form or by writing to reception@latviakharkiv.org. Visits are by appointment only."}
+    ]
+  },
+  latviaKharkiv:{kicker:"Latvia — Kharkiv",title:"Areas of bilateral cooperation",lead:"The Kharkiv region is a powerful scientific, educational, industrial and innovation hub of Ukraine. Latvia is an EU and NATO member with a mature digital economy. Together we are building a resilient bridge of cooperation.",
+    tracks:[
+      {title:"Economy",body:"Expanding bilateral trade, supporting exporters and investors.",points:["Industry","Agriculture","Logistics","IT & ICT","Defence tech"]},
+      {title:"Education",body:"Academic mobility, joint programmes, scholarships, faculty exchange.",points:["Master's programmes","Summer schools","Joint degrees","Erasmus+"]},
+      {title:"Science and innovation",body:"Joint research, participation in Horizon Europe and EEN.",points:["Horizon Europe","EEN","COST","EDF","BRAVE1"]},
+      {title:"Culture",body:"Literary readings, music and film festivals, exhibitions.",points:["Days of Latvia","Screenings","Exhibitions","Language courses"]},
+      {title:"Regional cooperation",body:"Twin cities, exchange of municipal experience, joint local projects.",points:["Twin cities","Urbanism","Smart cities","Transport"]},
+      {title:"Reconstruction of Ukraine",body:"Latvia is one of the most active partners in the reconstruction of the Kharkiv region.",points:["Housing","Energy","Demining","Healthcare"]}
+    ]
+  },
+  bridge:{kicker:"Latvia–Ukraine Business Bridge",title:"AI-driven business cooperation platform",lead:"Business Bridge is a diplomatic digital platform that helps Latvian and Ukrainian companies find partners, markets and joint projects. We are not a commercial intermediary — we reduce the barriers to high-quality contacts.",
+    forUa:{title:"For Ukrainian companies",body:"Register your company, present products and technologies, receive matches with Latvian and EU partners.",bullets:["Verification via the Unified State Register (EDRPOU)","Company profile with products, NACE, KVED, TRL","Automated matchmaking with Latvian partners","Access to European programmes: Horizon Europe, EDF, EEN"]},
+    forLv:{title:"For Latvian companies",body:"Enter the Ukrainian market with a trusted partner, source suppliers, R&D centres and talent.",bullets:["Verification via Uzņēmumu reģistrs","Company profile with NACE, products and markets","Automated matchmaking with Ukrainian enterprises","Support for integration into EU and NATO value chains"]},
+    howItWorks:{title:"How it works",steps:[{title:"Registration and verification",body:"A company creates an account and is verified via state registries."},{title:"Profile",body:"A description of products, technologies, markets, certifications, keywords and needs."},{title:"AI Matchmaking",body:"The algorithm proposes partners based on profile compatibility and signals."},{title:"Contact",body:"Direct communication, meeting support, presence at events and business missions."}]},
+    ai:{title:"AI Matchmaking",lead:"The algorithm takes into account more than twenty signals — from field of activity to participation in EU programmes — and proposes partners in real time.",signals:["Field of activity (KVED / NACE)","Products and technologies","Markets and export geography","TRL — technology readiness level","Dual-use / civil / defence","Certifications and standards","Keywords","Partner needs"],programmes:["Horizon Europe","Enterprise Europe Network","European Defence Fund","SAFE","BRAVE1","COST","SDG"],note:"Matchmaking is advisory. The final decision on cooperation is made by the companies themselves."},
+    apply:{title:"Apply",body:"Registration is free of charge for Latvian and Ukrainian legal entities. Applications are processed within 5 working days.",button:"Apply"},
+    disclaimer:"Business Bridge is an informational service under the auspices of the Honorary Consulate. The presence of a company on the platform does not constitute official endorsement or recommendation by the Honorary Consulate or the Republic of Latvia."
+  },
+  innovation:{kicker:"Innovation Hub",title:"Science, startups and cutting-edge technology",lead:"Latvia and the Kharkiv region share a unique joint potential in science, engineering and digital technology. We connect universities, research centres and startup ecosystems.",
+    pillars:[{title:"Startups",body:"Support for Latvian–Ukrainian startups via accelerators and funds."},{title:"AI",body:"Joint projects in artificial intelligence and robotics."},{title:"Cybersecurity",body:"Exchange of expertise on protecting critical infrastructure."},{title:"Digital",body:"Digital transformation of municipalities and business."},{title:"R&D",body:"Joint scientific consortia in EU programmes."},{title:"Technology transfer",body:"Commercialisation of scientific developments."}],
+    universities:{title:"Universities and science",body:"We cooperate with the leading higher education institutions of both countries.",list:["Riga Technical University (RTU)","University of Latvia (LU)","Rīga Stradiņš University (RSU)","V. N. Karazin Kharkiv National University","National Technical University “Kharkiv Polytechnic Institute”","Kharkiv National University of Radio Electronics (NURE)"]}
+  },
+  investment:{kicker:"Investment",title:"Bilateral investment and reconstruction",lead:"Latvian capital is a reliable partner in the reconstruction and development of the Kharkiv region. Ukrainian potential is an opportunity for Latvian investors to enter Europe's largest recovery market.",
+    whyKharkiv:{title:"Why Kharkiv",body:"A scientific and industrial hub with a deep engineering culture.",bullets:["More than 30 higher education institutions","Developed industry: machinery, energy, IT","Investor incentives in industrial parks","Direct access to EU infrastructure via Poland and the Baltics"]},
+    whyLatvia:{title:"Why Latvia",body:"An EU and NATO member state with a high ease-of-doing-business index.",bullets:["EU jurisdiction, direct access to the single market","Mature digital infrastructure and e-government","Three international ports and strategic logistics","Incentives for startups and IT companies"]},
+    recovery:{title:"Reconstruction",body:"Latvia is among the first countries to systematically engage in the reconstruction of the Kharkiv region in housing, energy, demining and healthcare."},
+    parks:{title:"Industrial parks and projects",body:"A catalogue of industrial parks of the Kharkiv region and active investment projects. Updated quarterly."}
+  },
+  cooperation:{kicker:"Cooperation",title:"Institutional and strategic cooperation",lead:"The Honorary Consulate develops a network of institutional cooperation with state bodies, diplomatic missions, universities and associations of both countries and the EU.",
+    institutional:{title:"Institutional Cooperation",body:"Key institutional partners:",
+      groups:[
+        {title:"State bodies",items:["MFA of the Republic of Latvia","MFA of Ukraine","Kharkiv Regional Military Administration","Kharkiv City Council"]},
+        {title:"Diplomatic missions",items:["Embassy of the Republic of Latvia in Ukraine","Embassy of Ukraine in the Republic of Latvia","Network of Honorary Consulates of Latvia in Europe"]},
+        {title:"Universities",items:["RTU, LU, RSU","V. N. Karazin KhNU, NTU “KhPI”, NURE"]},
+        {title:"Chambers of commerce and associations",items:["Latvian Chamber of Commerce and Industry (LTRK)","Kharkiv Chamber of Commerce","LIAA"]},
+        {title:"International organisations and funds",items:["Enterprise Europe Network","NATO SPS","European Investment Bank","EBRD"]}
+      ]
+    },
+    privateSector:{title:"Private Sector Cooperation",body:"A dedicated section is devoted to private-sector companies that systematically engage in Ukrainian–Latvian projects through patronage, sponsorship or partnership initiatives.",note:"The list is provided for information only and does not constitute official endorsement or recommendation by the Honorary Consulate."}
+  },
+  events:{kicker:"Events",title:"Forums, visits and cultural events",lead:"The calendar of public events organised by the Honorary Consulate.",
+    categories:["Business","Forums","Visits","Conferences","Exhibitions","Days of Latvia"],
+    upcoming:[
+      {date:"2026-08-05",place:"Kharkiv",title:"Forum “Latvia — Kharkiv Region: Reconstruction & Innovation”",text:"A public panel discussion with Latvian official delegations and business representatives."},
+      {date:"2026-09-11",place:"Riga",title:"Business mission of Kharkiv companies to Latvia",text:"A visit by a delegation of Kharkiv enterprises to the Riga Chamber of Commerce and LIAA."},
+      {date:"2026-10-02",place:"Kharkiv",title:"Latvian Statehood Day reception",text:"An official diplomatic reception marking the Statehood Day of the Republic of Latvia."},
+      {date:"2026-11-14",place:"Kharkiv",title:"Days of Latvian Culture",text:"A weeklong cultural programme: cinema, music, literature, tastings."}
+    ],
+    calendarNote:"The calendar is updated in real time. Media accreditation — press@latviakharkiv.org."
+  },
+  media:{kicker:"Media",title:"News, photo, video and press releases",lead:"Official materials for journalists, partners and the public.",
+    sections:[
+      {title:"News",body:"Regular updates on the activity of the Honorary Consulate.",button:"All news"},
+      {title:"Photo gallery",body:"Visual materials from events and visits.",button:"View"},
+      {title:"Video",body:"Speeches, reports and interviews.",button:"Watch"},
+      {title:"Press releases",body:"Official statements for the media.",button:"Download"},
+      {title:"Publications",body:"Analytical materials and reports.",button:"Read"}
+    ]
+  },
+  resources:{kicker:"Resources",title:"Useful information",lead:"Reference materials on law, customs, taxation, education and international economic activity.",
+    categories:[
+      {title:"Law",body:"Key legal acts of both countries and the EU.",links:[{label:"Likumi.lv",href:"https://likumi.lv"},{label:"Verkhovna Rada of Ukraine",href:"https://zakon.rada.gov.ua"},{label:"EUR-Lex",href:"https://eur-lex.europa.eu"}]},
+      {title:"Customs & exports",body:"Customs tariffs, procedures, quotas.",links:[{label:"VID",href:"https://www.vid.gov.lv"},{label:"Ukrainian Customs",href:"https://customs.gov.ua"}]},
+      {title:"Education",body:"Scholarships, exchange programmes, diploma recognition.",links:[{label:"AIKA",href:"https://www.aika.lv"},{label:"Study in Latvia",href:"https://studyinlatvia.lv"}]},
+      {title:"Investment & business",body:"Investment climate, export support.",links:[{label:"LIAA",href:"https://www.liaa.gov.lv"},{label:"UkraineInvest",href:"https://ukraineinvest.gov.ua"}]}
+    ]
+  },
+  contact:{kicker:"Contact",title:"Contact the Honorary Consulate",lead:"We reply to official requests within two working days. An emergency line is available 24/7.",address:"Kharkiv, Ukraine",hours:"Mon–Fri · 10:00 — 17:00 · by prior appointment",
+    phones:[{label:"Chancery",value:"+380 57 000 00 00"},{label:"Emergency line",value:"+380 67 000 00 00"}],
+    emails:[{label:"General enquiries",value:"info@latviakharkiv.org"},{label:"Consular matters",value:"consular@latviakharkiv.org"},{label:"Emergency",value:"emergency@latviakharkiv.org"},{label:"Business",value:"business@latviakharkiv.org"},{label:"Media",value:"press@latviakharkiv.org"}],
+    formTitle:"Contact form",formName:"Full name",formEmail:"E-mail",formSubject:"Subject",formMessage:"Message",formSend:"Send request",formNote:"Personal data is processed in accordance with the GDPR and Ukrainian data protection law.",
+    emergencyTitle:"Emergency contact",emergencyBody:"If you are a citizen of Latvia in an emergency situation within the district — contact us by any available means. We are available 24/7."
+  },
+  footer:{tagline:"Honorary Consulate of the Republic of Latvia in Kharkiv",officialNote:"Official website. Designed in accordance with the Graphic Standard of the Public Administration of the Republic of Latvia (2014).",
+    legalLinks:[{label:"Legal notice",href:"#/legal"},{label:"Privacy policy",href:"#/privacy"},{label:"Terms of use",href:"#/terms"}],
+    columns:[
+      {title:"Consulate",items:[{href:"consulate",label:"About the Consulate"},{href:"consular",label:"Consular information"},{href:"contact",label:"Contact"}]},
+      {title:"Cooperation",items:[{href:"latvia-kharkiv",label:"Latvia — Kharkiv"},{href:"cooperation",label:"Institutional cooperation"},{href:"business-bridge",label:"Business Bridge"}]},
+      {title:"Resources",items:[{href:"events",label:"Events"},{href:"media",label:"Media"},{href:"resources",label:"Resources"}]}
+    ],
+    copyright:"© 2026 Honorary Consulate of the Republic of Latvia in Kharkiv. All rights reserved."
+  }
+},
+lv:{
+  meta:{siteTitle:"Latvijas Republikas goda konsulāts Harkivā",republic:"Latvijas Republika",honoraryConsulate:"Goda konsulāts",inKharkiv:"Harkivā"},
+  nav:{home:"Sākums",consulate:"Goda konsulāts",consular:"Konsulārā informācija",latviaKharkiv:"Latvija — Harkiva",businessBridge:"Business Bridge",innovation:"Inovācijas",investment:"Investīcijas",cooperation:"Sadarbība",events:"Notikumi",media:"Mediji",resources:"Resursi",contact:"Kontakti"},
+  common:{readMore:"Lasīt vairāk",seeAll:"Skatīt visu",contactUs:"Sazināties",emergency:"Ārkārtas kontakts",consularDistrict:"Konsulārais apgabals",address:"Adrese",phone:"Tālrunis",email:"E-pasts",hours:"Pieņemšanas laiks"},
+  home:{heroKicker:"Latvijas Republika · Goda konsulāts Harkivā",heroTitle:"Diplomātiskais tilts starp Latviju un Harkivas reģionu",heroLead:"Latvijas Republikas interešu oficiālā pārstāvniecība Harkivā un abu valstu ekonomiskās, zinātniskās un kultūras sadarbības digitālā platforma.",ctaConsular:"Konsulārā palīdzība",ctaBridge:"Business Bridge",welcomeTitle:"Goda konsula uzruna",welcomeQuote:"Latviju un Ukrainu vieno kopīgas brīvības, tiesiskuma un Eiropas izvēles vērtības. Goda konsulāta uzdevums ir padarīt šo kopību sataustāmu ikdienā — humānajā palīdzībā, biznesa kontaktos, zinātnes un kultūras apmaiņā.",welcomeSignature:"Antons Semjonovs",welcomeRole:"Latvijas Republikas goda konsuls Harkivā",highlightsTitle:"Galvenie virzieni",
+    highlights:[
+      {title:"Konsulārā palīdzība Latvijas pilsoņiem",text:"Operatīvs atbalsts Latvijas pilsoņiem konsulārajā apgabalā.",href:"consular"},
+      {title:"Latvijas–Ukrainas sadarbība",text:"Ekonomika, zinātne, izglītība, kultūra, Ukrainas atjaunošana.",href:"latvia-kharkiv"},
+      {title:"Business Bridge",text:"AI platforma abu valstu uzņēmumu kontaktu veidošanai.",href:"business-bridge"},
+      {title:"Institucionālā sadarbība",text:"Partnerības ar valsts iestādēm, universitātēm un asociācijām.",href:"cooperation"}
+    ],
+    newsTitle:"Jaunākās ziņas",
+    news:[
+      {date:"2026-07-14",tag:"Vizīte",title:"Darba tikšanās ar Rīgas Tirdzniecības un rūpniecības kameras pārstāvjiem",excerpt:"Apspriesti Latvijas eksporta atbalsta virzieni un investīciju kanālu attīstība Harkivas ekonomikā."},
+      {date:"2026-06-30",tag:"Izglītība",title:"Sadarbības memorands ar Rīgas Tehnisko universitāti",excerpt:"Parakstīts dokuments, kas paver ceļu kopīgiem zinātniskiem projektiem un akadēmiskajai mobilitātei."},
+      {date:"2026-06-12",tag:"Kultūra",title:"Latvijas kultūras dienas Harkivā — programma",excerpt:"Nedēļas programma ar kino, mūziku un literārajiem lasījumiem."}
+    ],
+    eventsTitle:"Gaidāmie notikumi",
+    events:[
+      {date:"2026-08-05",place:"Harkiva",title:"Forums “Latvija — Harkiva: atjaunošana un inovācijas”"},
+      {date:"2026-09-11",place:"Rīga",title:"Harkivas uzņēmumu biznesa misija uz Latviju"},
+      {date:"2026-10-02",place:"Harkiva",title:"Latvijas Republikas valstiskuma dienas pieņemšana"}
+    ],
+    quickTitle:"Ātrās saites",
+    quick:[
+      {title:"Latvijas vēstniecība Ukrainā",text:"Vīzas, pilns konsulāro pakalpojumu saraksts",href:"https://www2.mfa.gov.lv"},
+      {title:"Latvijas ĀM",text:"Oficiāli paziņojumi un informācija",href:"https://www.mfa.gov.lv"},
+      {title:"LIAA",text:"Investīcijas, eksports, tūrisms",href:"https://www.liaa.gov.lv"},
+      {title:"Latvia.Travel",text:"Latvijas oficiālais tūrisma portāls",href:"https://www.latvia.travel"}
+    ],
+    contactStripTitle:"Nepieciešama konsultācija vai palīdzība?",
+    contactStripLead:"Uz oficiāliem pieprasījumiem atbildam divu darba dienu laikā. Ārkārtas gadījumiem — līnija 24/7."
+  },
+  consulate:{kicker:"Par goda konsulātu",title:"Latvijas Republikas goda konsulāts Harkivā",lead:"Goda konsulāts darbojas saskaņā ar 1963. gada Vīnes Konvenciju par konsulārajiem sakariem un Latvijas Republikas ĀM aktiem.",
+    history:{title:"Vēsture",body:"Goda konsulāts izveidots, lai padziļinātu divpusējās attiecības starp Latviju un Ukrainu, jo īpaši valsts austrumu daļā, un lai palīdzētu Latvijas pilsoņiem konsulārajā apgabalā."},
+    mission:{title:"Misija",body:"Aizstāvēt Latvijas Republikas intereses un cieņu, sniegt palīdzību tās pilsoņiem, kā arī attīstīt saites starp Latviju un Harkivas reģionu."},
+    powers:{title:"Pilnvaras",body:"Goda konsulāta pilnvaru apjomu nosaka Latvijas ĀM un Latvijas vēstniecība Ukrainā saskaņā ar spēkā esošajiem tiesību aktiem."},
+    district:{title:"Konsulārais apgabals",body:"Goda konsulāta darbība aptver konsulāta dibināšanas aktā noteiktās administratīvās vienības.",oblasts:["Harkivas apgabals","Poltavas apgabals","Sumu apgabals"]},
+    consul:{title:"Goda konsuls",name:"Antons Semjonovs",role:"Latvijas Republikas goda konsuls Harkivā",bio:"Uzņēmējs un sabiedriskais darbinieks ar ilggadēju pieredzi starptautisko ekonomisko un kultūras saišu attīstībā. Iecelts par goda konsulu pēc Latvijas ĀM ieteikuma."},
+    team:{title:"Komanda",body:"Ikdienas darbā konsulātam palīdz neliela profesionāļu komanda.",roles:[{name:"Kanceleja",role:"Vispārīgi pieprasījumi"},{name:"Konsulārais virziens",role:"Palīdzība Latvijas pilsoņiem"},{name:"Ekonomikas virziens",role:"Business Bridge, investīcijas"},{name:"Kultūras virziens",role:"Izglītības un kultūras programmas"}]},
+    doTitle:"Ko dara goda konsulāts",
+    doList:["Sniedz palīdzību Latvijas Republikas pilsoņiem ĀM noteiktā mandāta ietvaros.","Veicina divpusējo ekonomisko, zinātnisko, izglītības un kultūras saišu padziļināšanu.","Atbalsta Latvijas Republikas oficiālo delegāciju vizītes apgabalā.","Nodrošina oficiālās informācijas apmaiņu starp Ukrainas iestādēm un Latvijas vēstniecību.","Ierosina un koordinē kultūras un izglītības programmas Latvijas popularizēšanai."],
+    dontTitle:"Kas NAV goda konsulāta kompetencē",
+    dontList:["Vīzu, pasu un citu oficiālu dokumentu izsniegšana — to veic Latvijas vēstniecība Ukrainā.","Komerciāla starpniecība atsevišķu privāto uzņēmumu vārdā.","Publisks atbalsts vai konkrētu juridisku personu vai zīmolu ieteikšana.","Lēmumu pieņemšana par pilsonību, statusu vai oficiāliem atļaujām.","Juridiskā pārstāvība vai juridisku pakalpojumu sniegšana savās interesēs."],
+    legalNote:"Goda konsulāts darbojas saskaņā ar 1963. gada Vīnes Konvenciju un Latvijas ĀM aktiem. Visas pilnvaras tiek īstenotas Latvijas vēstniecības Ukrainā uzraudzībā."
+  },
+  consular:{kicker:"Konsulārā informācija",title:"Palīdzība Latvijas pilsoņiem un atsauces informācija",lead:"Goda konsulāts sniedz pamata konsulāro palīdzību Latvijas pilsoņiem savā apgabalā. Pilnu pakalpojumu klāstu nodrošina Latvijas vēstniecība Ukrainā.",
+    services:[
+      {title:"Identifikācija un saziņa",text:"Atbalsts pilsoņiem saziņā ar ģimeni vai pilnvarotām personām."},
+      {title:"Ārkārtas atgriešanās dokumenti",text:"Palīdzība atgriešanās dokumenta saņemšanā ar Latvijas vēstniecības starpniecību."},
+      {title:"Saziņa ar vietējām iestādēm",text:"Atbalsts saskarsmē ar tiesībsargājošām, medicīnas un administratīvām iestādēm."},
+      {title:"Ārkārtas situācijas",text:"Ātrs atbalsts situācijās, kas apdraud dzīvību vai veselību."}
+    ],
+    emergencyBlock:{title:"Ārkārtas kontakts",body:"Latvijas pilsoņiem, kas nonākuši ārkārtas situācijā apgabalā.",button:"emergency@latviakharkiv.org"},
+    documents:{title:"Dokumenti",body:"Dokumenti, ko ieteicams līdzi ņemt:",items:["Latvijas Republikas pilsoņa pase vai ID karte","Dokumenti, kas apliecina ģimenes saites","Medicīnas dokumenti","Policijas protokolu kopijas"]},
+    embassyRedirect:{title:"Latvijas vēstniecība Ukrainā",body:"Vīzu jautājumus, pasu izsniegšanu un pilnu konsulāro pakalpojumu klāstu nodrošina Latvijas vēstniecība Kijivā.",button:"Atvērt www2.mfa.gov.lv"},
+    faq:[
+      {q:"Vai goda konsulāts izsniedz vīzas?",a:"Nē. Vīzas izsniedz Latvijas vēstniecība Ukrainā un tās akreditētie vīzu centri."},
+      {q:"Vai varu pieteikties pasei goda konsulātā?",a:"Nē. Pasu pakalpojumus sniedz Latvijas vēstniecība."},
+      {q:"Ko darīt, ja pazaudēju dokumentus?",a:"Nekavējoties sazinieties ar mums pa ārkārtas e-pastu."},
+      {q:"Kā pieteikties uz pieņemšanu?",a:"Izmantojot kontaktformu vai rakstot uz reception@latviakharkiv.org."}
+    ]
+  },
+  latviaKharkiv:{kicker:"Latvija — Harkiva",title:"Divpusējās sadarbības virzieni",lead:"Harkivas reģions ir spēcīgs Ukrainas zinātnes, izglītības un inovāciju centrs. Latvija ir ES un NATO dalībvalsts. Kopā mēs veidojam noturīgu sadarbības tiltu.",
+    tracks:[
+      {title:"Ekonomika",body:"Divpusējās tirdzniecības paplašināšana.",points:["Rūpniecība","Lauksaimniecība","Loģistika","IT un IKT","Aizsardzības tehnoloģijas"]},
+      {title:"Izglītība",body:"Akadēmiskā mobilitāte, kopīgas programmas.",points:["Maģistra programmas","Vasaras skolas","Kopīgi grādi","Erasmus+"]},
+      {title:"Zinātne un inovācijas",body:"Kopīgi pētījumi, dalība Horizon Europe un EEN.",points:["Horizon Europe","EEN","COST","EDF","BRAVE1"]},
+      {title:"Kultūra",body:"Literārie lasījumi, mūzikas un kino festivāli.",points:["Latvijas dienas","Kinoseansi","Izstādes","Valodas kursi"]},
+      {title:"Reģionālā sadarbība",body:"Sadraudzības pilsētas, pašvaldību pieredzes apmaiņa.",points:["Sadraudzības pilsētas","Urbānistika","Viedas pilsētas","Transports"]},
+      {title:"Ukrainas atjaunošana",body:"Latvija ir viena no aktīvākajām atjaunošanas partnerēm.",points:["Mājoklis","Enerģētika","Atmīnēšana","Medicīna"]}
+    ]
+  },
+  bridge:{kicker:"Latvia–Ukraine Business Bridge",title:"AI platforma uzņēmumu sadarbībai",lead:"Business Bridge ir diplomātiska digitāla platforma, kas palīdz Latvijas un Ukrainas uzņēmumiem atrast partnerus. Mēs neesam komerciāls starpnieks — mēs mazinām šķēršļus kvalitatīvu kontaktu veidošanai.",
+    forUa:{title:"Ukrainas uzņēmumiem",body:"Reģistrējiet uzņēmumu, prezentējiet produktus, saņemiet partneru priekšlikumus.",bullets:["EDRPOU pārbaude","Uzņēmuma profils ar produktiem, KVED, NACE, TRL","Automātiska partneru atlase Latvijā","Piekļuve ES programmām"]},
+    forLv:{title:"Latvijas uzņēmumiem",body:"Ienāciet Ukrainas tirgū ar uzticamu partneri.",bullets:["Uzņēmumu reģistra pārbaude","Profils ar NACE, produktiem un tirgiem","Automātiska atlase ar Ukrainas uzņēmumiem","Atbalsts ES un NATO vērtību ķēdēs"]},
+    howItWorks:{title:"Kā tas darbojas",steps:[{title:"Reģistrācija un pārbaude",body:"Uzņēmums izveido kontu un tiek pārbaudīts valsts reģistros."},{title:"Profils",body:"Produktu, tehnoloģiju, tirgu apraksts."},{title:"AI atbilstības meklēšana",body:"Algoritms piedāvā partnerus, balstoties uz saderību."},{title:"Kontakts",body:"Tieša komunikācija, tikšanās atbalsts."}]},
+    ai:{title:"AI Matchmaking",lead:"Algoritms ņem vērā vairāk nekā divdesmit signālus un piedāvā partnerus reāllaikā.",signals:["Darbības joma (KVED / NACE)","Produkti un tehnoloģijas","Tirgi un eksporta ģeogrāfija","TRL","Dual-use / civilais / aizsardzības","Sertifikācijas","Atslēgvārdi","Partneru vajadzības"],programmes:["Horizon Europe","Enterprise Europe Network","European Defence Fund","SAFE","BRAVE1","COST","SDG"],note:"Atbilstības meklēšana ir ieteikuma raksturs."},
+    apply:{title:"Pieteikties",body:"Reģistrācija ir bez maksas. Pieteikumus izskata 5 darba dienu laikā.",button:"Pieteikties"},
+    disclaimer:"Business Bridge ir informatīvs pakalpojums goda konsulāta paspārnē. Uzņēmuma klātbūtne platformā nav uzskatāma par oficiālu apstiprinājumu."
+  },
+  innovation:{kicker:"Innovation Hub",title:"Zinātne, jaunuzņēmumi un tehnoloģijas",lead:"Latvijai un Harkivas reģionam ir unikāls kopīgs potenciāls zinātnē, inženierijā un digitālajās tehnoloģijās.",
+    pillars:[{title:"Jaunuzņēmumi",body:"Atbalsts caur akseleratoriem un fondiem."},{title:"AI",body:"Kopīgi projekti mākslīgā intelekta jomā."},{title:"Kiberdrošība",body:"Ekspertīzes apmaiņa."},{title:"Digitalizācija",body:"Pašvaldību un biznesa digitālā transformācija."},{title:"R&D",body:"Kopīgi zinātniskie konsorciji ES programmās."},{title:"Tehnoloģiju pārnese",body:"Zinātnisko izstrāžu komercializācija."}],
+    universities:{title:"Universitātes un zinātne",body:"Mēs sadarbojamies ar abu valstu vadošajām augstskolām.",list:["RTU","LU","RSU","V. N. Karazina KhNU","NTU „Harkivas Politehniskais institūts”","NURE"]}
+  },
+  investment:{kicker:"Investīcijas",title:"Divpusējās investīcijas un atjaunošana",lead:"Latvijas kapitāls ir uzticams partneris Harkivas reģiona atjaunošanā.",
+    whyKharkiv:{title:"Kāpēc Harkiva",body:"Zinātniski rūpnieciskais centrs ar dziļu inženierkultūru.",bullets:["Vairāk nekā 30 augstākās izglītības iestādes","Attīstīta rūpniecība","Investoru priekšrocības rūpniecības parkos","Tieša piekļuve ES infrastruktūrai"]},
+    whyLatvia:{title:"Kāpēc Latvija",body:"ES un NATO dalībvalsts.",bullets:["ES jurisdikcija","Attīstīta digitālā infrastruktūra","Trīs starptautiskās ostas","Priekšrocības jaunuzņēmumiem"]},
+    recovery:{title:"Atjaunošana",body:"Latvija ir viena no pirmajām valstīm, kas iesaistījusies Harkivas reģiona atjaunošanā."},
+    parks:{title:"Rūpniecības parki un projekti",body:"Harkivas reģiona rūpniecības parku katalogs."}
+  },
+  cooperation:{kicker:"Cooperation",title:"Institucionālā sadarbība",lead:"Goda konsulāts attīsta institucionālas sadarbības tīklu.",
+    institutional:{title:"Institucionālā sadarbība",body:"Galvenie institucionālie partneri:",
+      groups:[
+        {title:"Valsts iestādes",items:["Latvijas ĀM","Ukrainas ĀM","Harkivas apgabala militārā administrācija","Harkivas pilsētas dome"]},
+        {title:"Diplomātiskās pārstāvniecības",items:["Latvijas vēstniecība Ukrainā","Ukrainas vēstniecība Latvijā","Latvijas goda konsulātu tīkls Eiropā"]},
+        {title:"Universitātes",items:["RTU, LU, RSU","V. N. Karazina KhNU, NTU „KhPI”, NURE"]},
+        {title:"Tirdzniecības kameras un asociācijas",items:["LTRK","Harkivas TRK","LIAA"]},
+        {title:"Starptautiskās organizācijas",items:["Enterprise Europe Network","NATO SPS","EIB","EBRD"]}
+      ]
+    },
+    privateSector:{title:"Privātā sektora sadarbība",body:"Atsevišķa sadaļa veltīta privātā sektora uzņēmumiem, kas sistemātiski iesaistās Ukrainas–Latvijas projektos.",note:"Saraksts ir informatīvs un nav uzskatāms par oficiālu apstiprinājumu."}
+  },
+  events:{kicker:"Notikumi",title:"Forumi, vizītes un kultūras pasākumi",lead:"Goda konsulāta publisko pasākumu kalendārs.",
+    categories:["Bizness","Forumi","Vizītes","Konferences","Izstādes","Latvijas dienas"],
+    upcoming:[
+      {date:"2026-08-05",place:"Harkiva",title:"Forums „Latvija — Harkiva: atjaunošana un inovācijas”",text:"Publiska paneļdiskusija."},
+      {date:"2026-09-11",place:"Rīga",title:"Harkivas uzņēmumu biznesa misija",text:"Harkivas uzņēmumu delegācijas vizīte Rīgas TRK un LIAA."},
+      {date:"2026-10-02",place:"Harkiva",title:"Latvijas Republikas valstiskuma dienas pieņemšana",text:"Oficiāla diplomātiska pieņemšana."},
+      {date:"2026-11-14",place:"Harkiva",title:"Latvijas kultūras dienas",text:"Nedēļas kultūras programma."}
+    ],
+    calendarNote:"Kalendārs tiek atjaunināts reāllaikā. Mediju akreditācijai — press@latviakharkiv.org."
+  },
+  media:{kicker:"Mediji",title:"Ziņas, foto, video un preses relīzes",lead:"Oficiāli materiāli žurnālistiem, partneriem un sabiedrībai.",
+    sections:[
+      {title:"Ziņas",body:"Regulāri atjauninājumi.",button:"Visas ziņas"},
+      {title:"Foto galerija",body:"Vizuāli materiāli no notikumiem.",button:"Skatīt"},
+      {title:"Video",body:"Uzrunas, reportāžas un intervijas.",button:"Skatīt"},
+      {title:"Preses relīzes",body:"Oficiāli paziņojumi medijiem.",button:"Lejupielādēt"},
+      {title:"Publikācijas",body:"Analītiskie materiāli.",button:"Lasīt"}
+    ]
+  },
+  resources:{kicker:"Resursi",title:"Noderīga informācija",lead:"Atsauces materiāli par tiesībām, muitu, izglītību un ekonomisko darbību.",
+    categories:[
+      {title:"Tiesības",body:"Galvenie tiesību akti.",links:[{label:"Likumi.lv",href:"https://likumi.lv"},{label:"Ukrainas Augstākā Rada",href:"https://zakon.rada.gov.ua"},{label:"EUR-Lex",href:"https://eur-lex.europa.eu"}]},
+      {title:"Muita un eksports",body:"Muitas tarifi, procedūras.",links:[{label:"VID",href:"https://www.vid.gov.lv"},{label:"Ukrainas Muita",href:"https://customs.gov.ua"}]},
+      {title:"Izglītība",body:"Stipendijas un apmaiņas programmas.",links:[{label:"AIKA",href:"https://www.aika.lv"},{label:"Study in Latvia",href:"https://studyinlatvia.lv"}]},
+      {title:"Investīcijas",body:"Investīciju vide.",links:[{label:"LIAA",href:"https://www.liaa.gov.lv"},{label:"UkraineInvest",href:"https://ukraineinvest.gov.ua"}]}
+    ]
+  },
+  contact:{kicker:"Kontakti",title:"Sazināties ar goda konsulātu",lead:"Uz oficiāliem pieprasījumiem atbildam divu darba dienu laikā.",address:"Harkiva, Ukraina",hours:"Pirmd.–Piektd. · 10:00 — 17:00 · pēc iepriekšēja pieraksta",
+    phones:[{label:"Kanceleja",value:"+380 57 000 00 00"},{label:"Ārkārtas līnija",value:"+380 67 000 00 00"}],
+    emails:[{label:"Vispārīgi jautājumi",value:"info@latviakharkiv.org"},{label:"Konsulārie jautājumi",value:"consular@latviakharkiv.org"},{label:"Ārkārtas kontakts",value:"emergency@latviakharkiv.org"},{label:"Biznesa virziens",value:"business@latviakharkiv.org"},{label:"Mediji",value:"press@latviakharkiv.org"}],
+    formTitle:"Kontaktforma",formName:"Vārds un uzvārds",formEmail:"E-pasts",formSubject:"Tēma",formMessage:"Ziņojums",formSend:"Nosūtīt pieprasījumu",formNote:"Personas dati tiek apstrādāti saskaņā ar GDPR.",
+    emergencyTitle:"Ārkārtas kontakts",emergencyBody:"Ja jūs esat Latvijas pilsonis ārkārtas situācijā — sazinieties ar mums jebkurā veidā. Mēs esam sasniedzami 24/7."
+  },
+  footer:{tagline:"Latvijas Republikas goda konsulāts Harkivā",officialNote:"Oficiāls resurss. Izstrādāts saskaņā ar Latvijas valsts pārvaldes grafisko standartu (2014).",
+    legalLinks:[{label:"Juridiskā informācija",href:"#/legal"},{label:"Privātuma politika",href:"#/privacy"},{label:"Lietošanas noteikumi",href:"#/terms"}],
+    columns:[
+      {title:"Konsulāts",items:[{href:"consulate",label:"Par konsulātu"},{href:"consular",label:"Konsulārā informācija"},{href:"contact",label:"Kontakti"}]},
+      {title:"Sadarbība",items:[{href:"latvia-kharkiv",label:"Latvija — Harkiva"},{href:"cooperation",label:"Institucionālā sadarbība"},{href:"business-bridge",label:"Business Bridge"}]},
+      {title:"Resursi",items:[{href:"events",label:"Notikumi"},{href:"media",label:"Mediji"},{href:"resources",label:"Resursi"}]}
+    ],
+    copyright:"© 2026 Latvijas Republikas goda konsulāts Harkivā. Visas tiesības aizsargātas."
+  }
+}
+};
+
+/* ============================================================
+   Small helpers
+   ============================================================ */
+const $ = (s, c=document) => c.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const el = (html) => { const t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstElementChild; };
+
+const STATE = {
+  lang: (localStorage.getItem('lang') || (navigator.language||'').slice(0,2).toLowerCase()),
+  route: 'home'
+};
+if(!['uk','en','lv'].includes(STATE.lang)) STATE.lang = 'uk';
+
+const ROUTES = ['home','consulate','consular','latvia-kharkiv','business-bridge','innovation','investment','cooperation','events','media','resources','contact'];
+
+/* ============================================================
+   SVG marks
+   ============================================================ */
+const BRAND_MARK = `
+<svg class="brand-mark" viewBox="0 0 40 40" aria-hidden xmlns="http://www.w3.org/2000/svg">
+  <path d="M4 2 H36 V26 C36 32.5 30 37 20 38 C10 37 4 32.5 4 26 Z" fill="#fff" stroke="#1a1a1a" stroke-width="1.4"/>
+  <rect x="4" y="17" width="32" height="6" fill="#9e3039"/>
+  <path d="M4 17 H36" stroke="#1a1a1a" stroke-width="0.6" opacity="0.4"/>
+  <path d="M4 23 H36" stroke="#1a1a1a" stroke-width="0.6" opacity="0.4"/>
+</svg>`;
+
+const FLAG = `<div class="flag-stripe"><div></div><div></div><div></div></div>`;
+
+/* ============================================================
+   Renderers
+   ============================================================ */
+function pageHeader(kicker, title, lead){
+  return `
+  <section class="page-header">
+    <div class="container">
+      <div class="kicker">${esc(kicker)}</div>
+      <h1 style="margin-top:16px">${esc(title)}</h1>
+      ${lead ? `<p class="lead">${esc(lead)}</p>` : ``}
+    </div>
+  </section>`;
+}
+
+function renderHome(d){
+  const c = d.common;
+  const h = d.home;
+  return `
+  <div class="page active" data-route="home">
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker">${esc(h.heroKicker)}</div>
+            <h1 style="margin-top:24px">${esc(h.heroTitle)}</h1>
+            <p class="hero-lead">${esc(h.heroLead)}</p>
+            <div class="hero-cta">
+              <a href="#/consular" class="btn btn-primary">${esc(h.ctaConsular)} →</a>
+              <a href="#/business-bridge" class="btn btn-outline">${esc(h.ctaBridge)} →</a>
+            </div>
+          </div>
+          <aside class="hero-side">
+            <div class="label">${esc(c.consularDistrict)}</div>
+            <ul>${d.consulate.district.oblasts.map(o=>`<li>${esc(o)}</li>`).join('')}</ul>
+            <div style="margin-top:24px; padding-top:16px; border-top:1px solid var(--border)">
+              <div class="label">${esc(c.emergency)}</div>
+              <div style="margin-top:8px; font-family:var(--font-display); font-size:18px">+380 67 000 00 00</div>
+              <div style="font-size:14px; color:var(--ink-muted)">emergency@latviakharkiv.org</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+      ${FLAG}
+    </section>
+
+    <section class="welcome">
+      <div class="container">
+        <div class="welcome-grid">
+          <div>
+            <div class="kicker">${esc(h.welcomeTitle)}</div>
+            <div style="margin-top:24px" class="welcome-photo">Фото Почесного консула</div>
+            <div style="margin-top:16px; font-family:var(--font-display); font-weight:600">${esc(h.welcomeSignature)}</div>
+            <div style="font-size:14px; color:var(--ink-muted)">${esc(h.welcomeRole)}</div>
+          </div>
+          <div>
+            <div class="divider-red"></div>
+            <blockquote class="welcome-quote">“${esc(h.welcomeQuote)}”</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlights">
+      <div class="container">
+        <div class="kicker">${esc(h.highlightsTitle)}</div>
+        <div class="grid-4" style="margin-top:32px">
+          ${h.highlights.map(x=>`
+            <a href="#/${esc(x.href)}" class="card">
+              <div class="highlight-icon">◆</div>
+              <div class="highlight-title">${esc(x.title)}</div>
+              <p class="highlight-text">${esc(x.text)}</p>
+              <div class="highlight-cta">${esc(c.readMore)} →</div>
+            </a>`).join('')}
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section">
+      <div class="container">
+        <div class="news-grid">
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px">
+              <div>
+                <div class="kicker">${esc(h.newsTitle)}</div>
+                <h2 style="margin-top:12px">${esc(h.newsTitle)}</h2>
+              </div>
+              <a href="#/media" class="btn-ghost">${esc(c.seeAll)} →</a>
+            </div>
+            <div style="margin-top:24px">
+              ${h.news.map(n=>`
+                <article class="news-item">
+                  <div class="news-date">
+                    <div>${esc(n.date)}</div>
+                    <div class="tag" style="margin-top:6px">${esc(n.tag)}</div>
+                  </div>
+                  <div>
+                    <h3 class="news-title">${esc(n.title)}</h3>
+                    <p class="news-excerpt">${esc(n.excerpt)}</p>
+                  </div>
+                </article>`).join('')}
+            </div>
+          </div>
+          <aside>
+            <div class="kicker">${esc(h.eventsTitle)}</div>
+            <h2 style="margin-top:12px">${esc(h.eventsTitle)}</h2>
+            <ul class="events-list">
+              ${h.events.map(e=>`
+                <li class="event-item">
+                  <div class="event-meta">${esc(e.date)} · ${esc(e.place)}</div>
+                  <div class="event-title">${esc(e.title)}</div>
+                </li>`).join('')}
+            </ul>
+            <a href="#/events" class="btn-ghost" style="display:inline-block; margin-top:24px">${esc(c.seeAll)} →</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick">
+      <div class="container">
+        <div class="quick-inner">
+          <div class="kicker" style="color:var(--brand-500)">${esc(h.quickTitle)}</div>
+          <div class="quick-grid">
+            ${h.quick.map(q=>`
+              <a class="quick-item" href="${esc(q.href)}" target="_blank" rel="noopener noreferrer">
+                <div class="t1">${esc(q.title)}</div>
+                <div class="t2">${esc(q.text)}</div>
+                <div class="t3">↗ open</div>
+              </a>`).join('')}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-strip">
+      <div class="container">
+        <div class="contact-strip-box">
+          <div>
+            <div class="kicker">${esc(c.contactUs)}</div>
+            <h2 style="margin-top:16px">${esc(h.contactStripTitle)}</h2>
+            <p style="margin-top:12px; color:var(--ink-soft)">${esc(h.contactStripLead)}</p>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap">
+            <a href="#/contact" class="btn btn-primary">${esc(c.contactUs)} →</a>
+            <a href="mailto:emergency@latviakharkiv.org" class="btn btn-outline">${esc(c.emergency)}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>`;
+}
+
+function renderConsulate(d){
+  const x = d.consulate;
+  return `<div class="page" data-route="consulate">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div class="grid-3">
+        ${[x.history,x.mission,x.powers].map(b=>`
+          <div><div class="divider-red"></div>
+          <h2 style="margin-top:12px; font-size:1.25rem">${esc(b.title)}</h2>
+          <p style="margin-top:12px; color:var(--ink-soft); line-height:1.65">${esc(b.body)}</p></div>`).join('')}
+      </div>
+    </div></section>
+    <section style="border-top:1px solid var(--border); background:var(--surface-alt)"><div class="container" style="padding:64px 0">
+      <div class="grid-2">
+        <div>
+          <div class="kicker">${esc(x.district.title)}</div>
+          <h2 style="margin-top:12px">${esc(x.district.title)}</h2>
+          <p style="margin-top:12px; color:var(--ink-soft)">${esc(x.district.body)}</p>
+          <ul style="margin-top:24px; display:flex; flex-direction:column; gap:8px">
+            ${x.district.oblasts.map(o=>`<li style="display:flex; align-items:center; gap:12px"><span style="height:6px; width:24px; background:var(--brand-600)"></span><span style="font-family:var(--font-display); font-size:18px">${esc(o)}</span></li>`).join('')}
+          </ul>
+        </div>
+        <div class="box-white">
+          <div class="kicker">${esc(x.consul.title)}</div>
+          <h2 style="margin-top:12px">${esc(x.consul.name)}</h2>
+          <div style="color:var(--brand-700); font-weight:600; font-size:14px; margin-top:4px">${esc(x.consul.role)}</div>
+          <p style="margin-top:16px; color:var(--ink-soft); line-height:1.65">${esc(x.consul.bio)}</p>
+        </div>
+      </div>
+    </div></section>
+    <section class="pad"><div class="container">
+      <div class="do-dont">
+        <div class="box-white">
+          <div class="kicker">${esc(x.doTitle)}</div>
+          <h2 style="margin-top:16px">${esc(x.doTitle)}</h2>
+          <ul class="list-check">${x.doList.map(i=>`<li><span class="m">✓</span><span>${esc(i)}</span></li>`).join('')}</ul>
+        </div>
+        <div class="box-dark">
+          <div class="kicker">${esc(x.dontTitle)}</div>
+          <h2 style="margin-top:16px">${esc(x.dontTitle)}</h2>
+          <ul class="list-check">${x.dontList.map(i=>`<li><span class="m">✕</span><span>${esc(i)}</span></li>`).join('')}</ul>
+        </div>
+      </div>
+      <div style="margin-top:40px">
+        <div class="divider-red"></div>
+        <h2 style="margin-top:12px">${esc(x.team.title)}</h2>
+        <p style="margin-top:12px; color:var(--ink-soft); max-width:720px">${esc(x.team.body)}</p>
+        <div class="grid-4" style="margin-top:32px">
+          ${x.team.roles.map(r=>`<div style="border:1px solid var(--border); padding:24px"><div style="font-family:var(--font-display); font-weight:600">${esc(r.name)}</div><div style="margin-top:8px; font-size:14px; color:var(--ink-muted)">${esc(r.role)}</div></div>`).join('')}
+        </div>
+      </div>
+      <p class="center-note">${esc(x.legalNote)}</p>
+    </div></section>
+  </div>`;
+}
+
+function renderConsular(d){
+  const x = d.consular;
+  return `<div class="page" data-route="consular">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div class="grid-2">
+        ${x.services.map(s=>`<div style="padding:24px; border:1px solid var(--border)">
+          <div style="color:var(--brand-600); font-family:var(--font-display); font-size:24px; line-height:1">◆</div>
+          <div style="margin-top:12px; font-family:var(--font-display); font-size:18px; font-weight:600">${esc(s.title)}</div>
+          <p style="margin-top:8px; color:var(--ink-soft); font-size:14px; line-height:1.6">${esc(s.text)}</p>
+        </div>`).join('')}
+      </div>
+    </div></section>
+    <section class="emerg-band"><div class="container"><div class="grid">
+      <div>
+        <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; color:rgba(255,255,255,.7); font-weight:600">${esc(x.emergencyBlock.title)}</div>
+        <h2 style="margin-top:12px">${esc(x.emergencyBlock.title)}</h2>
+        <p style="margin-top:12px; color:rgba(255,255,255,.9); max-width:640px">${esc(x.emergencyBlock.body)}</p>
+      </div>
+      <a href="mailto:${esc(x.emergencyBlock.button)}" class="emerg-btn">${esc(x.emergencyBlock.button)}</a>
+    </div></div></section>
+    <section class="pad"><div class="container">
+      <div class="grid-2">
+        <div>
+          <div class="divider-red"></div>
+          <h2 style="margin-top:12px">${esc(x.documents.title)}</h2>
+          <p style="margin-top:12px; color:var(--ink-soft)">${esc(x.documents.body)}</p>
+          <ul style="margin-top:16px; display:flex; flex-direction:column; gap:8px">
+            ${x.documents.items.map(i=>`<li style="display:flex; gap:12px; color:var(--ink-soft)"><span style="color:var(--brand-600); margin-top:4px">•</span>${esc(i)}</li>`).join('')}
+          </ul>
+        </div>
+        <div style="padding:32px; border:1px solid var(--border); background:var(--surface-alt)">
+          <div class="divider-red"></div>
+          <h2 style="margin-top:12px">${esc(x.embassyRedirect.title)}</h2>
+          <p style="margin-top:12px; color:var(--ink-soft)">${esc(x.embassyRedirect.body)}</p>
+          <a href="https://www2.mfa.gov.lv" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:24px">${esc(x.embassyRedirect.button)} ↗</a>
+        </div>
+      </div>
+      <div style="margin-top:40px">
+        <div class="divider-red"></div>
+        <h2 style="margin-top:12px">FAQ</h2>
+        <div style="margin-top:24px">
+          ${x.faq.map(qa=>`<details><summary>${esc(qa.q)}</summary><p>${esc(qa.a)}</p></details>`).join('')}
+        </div>
+      </div>
+    </div></section>
+  </div>`;
+}
+
+function renderLatviaKharkiv(d){
+  const x = d.latviaKharkiv;
+  return `<div class="page" data-route="latvia-kharkiv">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div class="grid-3">
+        ${x.tracks.map(t=>`<div style="padding:24px; border:1px solid var(--border); background:#fff">
+          <div class="divider-red"></div>
+          <h3 style="margin-top:12px">${esc(t.title)}</h3>
+          <p style="margin-top:12px; color:var(--ink-soft); font-size:14px">${esc(t.body)}</p>
+          <ul style="margin-top:16px; display:flex; flex-wrap:wrap; gap:8px">
+            ${t.points.map(p=>`<li class="tag">${esc(p)}</li>`).join('')}
+          </ul>
+        </div>`).join('')}
+      </div>
+    </div></section>
+  </div>`;
+}
+
+function renderBridge(d){
+  const x = d.bridge;
+  return `<div class="page" data-route="business-bridge">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div class="grid-2">
+        ${[x.forUa,x.forLv].map(b=>`<div class="box-white">
+          <div class="divider-red"></div>
+          <h2 style="margin-top:12px">${esc(b.title)}</h2>
+          <p style="margin-top:12px; color:var(--ink-soft)">${esc(b.body)}</p>
+          <ul style="margin-top:24px; display:flex; flex-direction:column; gap:8px">
+            ${b.bullets.map(i=>`<li style="display:flex; gap:12px; color:var(--ink-soft)"><span style="color:var(--brand-600); margin-top:2px">→</span>${esc(i)}</li>`).join('')}
+          </ul>
+        </div>`).join('')}
+      </div>
+    </div></section>
+    <section style="border-top:1px solid var(--border); background:var(--surface-alt)"><div class="container" style="padding:64px 0">
+      <div class="kicker">${esc(x.howItWorks.title)}</div>
+      <h2 style="margin-top:12px">${esc(x.howItWorks.title)}</h2>
+      <div class="grid-4" style="margin-top:40px">
+        ${x.howItWorks.steps.map((s,i)=>`<div>
+          <div style="font-family:var(--font-display); font-size:36px; color:var(--brand-600); line-height:1">0${i+1}</div>
+          <div class="divider-red" style="margin-top:16px"></div>
+          <h3 style="margin-top:16px; font-size:18px">${esc(s.title)}</h3>
+          <p style="margin-top:8px; font-size:14px; color:var(--ink-soft)">${esc(s.body)}</p>
+        </div>`).join('')}
+      </div>
+    </div></section>
+    <section style="background:var(--ink); color:#fff"><div class="container" style="padding:64px 0">
+      <div class="grid-2">
+        <div>
+          <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:var(--brand-500)">${esc(x.ai.title)}</div>
+          <h2 style="margin-top:16px">${esc(x.ai.title)}</h2>
+          <p style="margin-top:16px; color:rgba(255,255,255,.8); line-height:1.65">${esc(x.ai.lead)}</p>
+          <p style="margin-top:24px; font-size:12px; color:rgba(255,255,255,.6); font-style:italic">${esc(x.ai.note)}</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:24px">
+          <div>
+            <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:var(--brand-500)">Signals</div>
+            <ul style="margin-top:12px; display:flex; flex-wrap:wrap; gap:8px">
+              ${x.ai.signals.map(s=>`<li class="chip" style="color:#fff; border-color:rgba(255,255,255,.25)">${esc(s)}</li>`).join('')}
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:var(--brand-500)">Programmes</div>
+            <ul style="margin-top:12px; display:flex; flex-wrap:wrap; gap:8px">
+              ${x.ai.programmes.map(s=>`<li style="background:var(--brand-600); color:#fff; padding:4px 12px; font-size:11px; font-weight:600">${esc(s)}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div></section>
+    <section class="pad"><div class="container">
+      <div style="border:1px solid var(--border); padding:32px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px">
+        <div>
+          <div class="kicker">${esc(x.apply.title)}</div>
+          <h2 style="margin-top:16px">${esc(x.apply.title)}</h2>
+          <p style="margin-top:8px; color:var(--ink-soft); max-width:640px">${esc(x.apply.body)}</p>
+        </div>
+        <a href="mailto:matchmaking@latviakharkiv.org" class="btn btn-primary">${esc(x.apply.button)} →</a>
+      </div>
+      <p class="center-note">${esc(x.disclaimer)}</p>
+    </div></section>
+  </div>`;
+}
+
+function renderInnovation(d){
+  const x = d.innovation;
+  return `<div class="page" data-route="innovation">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div class="grid-3">
+        ${x.pillars.map(p=>`<div style="padding:24px; border:1px solid var(--border); background:#fff">
+          <div class="divider-red"></div>
+          <h3 style="margin-top:12px">${esc(p.title)}</h3>
+          <p style="margin-top:12px; color:var(--ink-soft)">${esc(p.body)}</p>
+        </div>`).join('')}
+      </div>
+    </div></section>
+    <section style="border-top:1px solid var(--border); background:var(--surface-alt)"><div class="container" style="padding:64px 0">
+      <div class="kicker">${esc(x.universities.title)}</div>
+      <h2 style="margin-top:12px">${esc(x.universities.title)}</h2>
+      <p style="margin-top:12px; color:var(--ink-soft); max-width:720px">${esc(x.universities.body)}</p>
+      <ul class="grid-2" style="margin-top:32px">
+        ${x.universities.list.map(u=>`<li style="display:flex; align-items:center; gap:12px; background:#fff; border:1px solid var(--border); padding:16px"><span style="height:8px; width:8px; background:var(--brand-600)"></span><span style="font-family:var(--font-display)">${esc(u)}</span></li>`).join('')}
+      </ul>
+    </div></section>
+  </div>`;
+}
+
+function renderInvestment(d){
+  const x = d.investment;
+  return `<div class="page" data-route="investment">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div class="grid-2">
+        ${[x.whyKharkiv,x.whyLatvia].map(b=>`<div style="border:1px solid var(--border); padding:32px">
+          <div class="divider-red"></div>
+          <h2 style="margin-top:12px">${esc(b.title)}</h2>
+          <p style="margin-top:12px; color:var(--ink-soft)">${esc(b.body)}</p>
+          <ul style="margin-top:24px; display:flex; flex-direction:column; gap:8px">
+            ${b.bullets.map(i=>`<li style="display:flex; gap:12px; color:var(--ink-soft)"><span style="color:var(--brand-600); margin-top:2px">→</span>${esc(i)}</li>`).join('')}
+          </ul>
+        </div>`).join('')}
+      </div>
+    </div></section>
+    <section style="background:var(--brand-600); color:#fff"><div class="container" style="padding:56px 0">
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:rgba(255,255,255,.7)">${esc(x.recovery.title)}</div>
+      <h2 style="margin-top:12px">${esc(x.recovery.title)}</h2>
+      <p style="margin-top:16px; max-width:720px; color:rgba(255,255,255,.9); line-height:1.65">${esc(x.recovery.body)}</p>
+    </div></section>
+    <section class="pad"><div class="container">
+      <div class="divider-red"></div>
+      <h2 style="margin-top:12px">${esc(x.parks.title)}</h2>
+      <p style="margin-top:12px; color:var(--ink-soft); max-width:720px">${esc(x.parks.body)}</p>
+    </div></section>
+  </div>`;
+}
+
+function renderCooperation(d){
+  const x = d.cooperation;
+  return `<div class="page" data-route="cooperation">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div class="kicker">${esc(x.institutional.title)}</div>
+      <h2 style="margin-top:12px">${esc(x.institutional.title)}</h2>
+      <p style="margin-top:12px; color:var(--ink-soft); max-width:720px">${esc(x.institutional.body)}</p>
+      <div class="grid-3" style="margin-top:40px">
+        ${x.institutional.groups.map(g=>`<div style="border:1px solid var(--border); padding:24px; background:#fff">
+          <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:var(--brand-700)">${esc(g.title)}</div>
+          <ul style="margin-top:16px; display:flex; flex-direction:column; gap:8px">
+            ${g.items.map(i=>`<li style="display:flex; gap:8px; font-size:14px; color:var(--ink-soft)"><span style="color:var(--brand-600); margin-top:4px">•</span>${esc(i)}</li>`).join('')}
+          </ul>
+        </div>`).join('')}
+      </div>
+    </div></section>
+    <section style="border-top:1px solid var(--border); background:var(--surface-alt)"><div class="container" style="padding:64px 0">
+      <div class="kicker">${esc(x.privateSector.title)}</div>
+      <h2 style="margin-top:12px">${esc(x.privateSector.title)}</h2>
+      <p style="margin-top:16px; color:var(--ink-soft); max-width:720px">${esc(x.privateSector.body)}</p>
+      <p class="center-note">${esc(x.privateSector.note)}</p>
+    </div></section>
+  </div>`;
+}
+
+function renderEvents(d){
+  const x = d.events;
+  return `<div class="page" data-route="events">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section style="padding:32px 0"><div class="container">
+      <div style="display:flex; flex-wrap:wrap; gap:8px">
+        ${x.categories.map(c=>`<span class="tag">${esc(c)}</span>`).join('')}
+      </div>
+    </div></section>
+    <section style="padding-bottom:64px"><div class="container">
+      <div>
+        ${x.upcoming.map(e=>`<article class="event-row">
+          <div>
+            <div class="date">${esc(e.date)}</div>
+            <div class="place">${esc(e.place)}</div>
+          </div>
+          <div>
+            <h3>${esc(e.title)}</h3>
+            <p style="margin-top:8px; color:var(--ink-soft)">${esc(e.text)}</p>
+          </div>
+        </article>`).join('')}
+      </div>
+      <p class="center-note">${esc(x.calendarNote)}</p>
+    </div></section>
+  </div>`;
+}
+
+function renderMedia(d){
+  const x = d.media;
+  return `<div class="page" data-route="media">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div class="grid-3">
+        ${x.sections.map(s=>`<div style="padding:24px; border:1px solid var(--border); background:#fff; display:flex; flex-direction:column">
+          <div class="divider-red"></div>
+          <h3 style="margin-top:12px">${esc(s.title)}</h3>
+          <p style="margin-top:12px; color:var(--ink-soft); font-size:14px; flex:1">${esc(s.body)}</p>
+          <button class="btn btn-outline" style="margin-top:24px; align-self:flex-start">${esc(s.button)} →</button>
+        </div>`).join('')}
+      </div>
+    </div></section>
+  </div>`;
+}
+
+function renderResources(d){
+  const x = d.resources;
+  return `<div class="page" data-route="resources">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div class="grid-2">
+        ${x.categories.map(c=>`<div style="border:1px solid var(--border); padding:32px; background:#fff">
+          <div class="divider-red"></div>
+          <h2 style="margin-top:12px">${esc(c.title)}</h2>
+          <p style="margin-top:12px; color:var(--ink-soft)">${esc(c.body)}</p>
+          <ul style="margin-top:24px; display:flex; flex-direction:column; gap:12px">
+            ${c.links.map(l=>`<li><a href="${esc(l.href)}" target="_blank" rel="noopener noreferrer" class="link-underline" style="font-size:14px">${esc(l.label)} ↗</a></li>`).join('')}
+          </ul>
+        </div>`).join('')}
+      </div>
+    </div></section>
+  </div>`;
+}
+
+function renderContact(d){
+  const x = d.contact;
+  const c = d.common;
+  return `<div class="page" data-route="contact">
+    ${pageHeader(x.kicker, x.title, x.lead)}
+    <section class="pad"><div class="container">
+      <div style="display:grid; gap:40px; grid-template-columns:1fr" class="contact-page-grid">
+        <div style="display:flex; flex-direction:column; gap:32px">
+          <div>
+            <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:var(--brand-700)">${esc(c.address)}</div>
+            <div style="margin-top:8px; font-family:var(--font-display); font-size:18px">${esc(x.address)}</div>
+          </div>
+          <div>
+            <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:var(--brand-700)">${esc(c.hours)}</div>
+            <div style="margin-top:8px; font-family:var(--font-display); font-size:18px">${esc(x.hours)}</div>
+          </div>
+          <div>
+            <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:var(--brand-700)">${esc(c.phone)}</div>
+            <ul style="margin-top:12px; display:flex; flex-direction:column; gap:12px">
+              ${x.phones.map(p=>`<li><div style="font-size:14px; color:var(--ink-muted)">${esc(p.label)}</div><a href="tel:${esc(p.value.replace(/\\s/g,''))}" class="link-underline" style="font-family:var(--font-display); font-size:18px">${esc(p.value)}</a></li>`).join('')}
+            </ul>
+          </div>
+          <div>
+            <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:var(--brand-700)">${esc(c.email)}</div>
+            <ul style="margin-top:12px; display:flex; flex-direction:column; gap:12px">
+              ${x.emails.map(e=>`<li><div style="font-size:14px; color:var(--ink-muted)">${esc(e.label)}</div><a href="mailto:${esc(e.value)}" class="link-underline">${esc(e.value)}</a></li>`).join('')}
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div style="border:1px solid var(--border); padding:32px; background:var(--surface-alt)">
+            <div class="divider-red"></div>
+            <h2 style="margin-top:12px">${esc(x.formTitle)}</h2>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo form — не підключено.');">
+              <div class="row-2">
+                <label>${esc(x.formName)}<input required></label>
+                <label>${esc(x.formEmail)}<input type="email" required></label>
+              </div>
+              <label>${esc(x.formSubject)}<input></label>
+              <label>${esc(x.formMessage)}<textarea rows="6"></textarea></label>
+              <button type="submit" class="btn btn-primary" style="justify-self:start">${esc(x.formSend)} →</button>
+              <p style="font-size:12px; color:var(--ink-muted)">${esc(x.formNote)}</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div></section>
+    <style>@media(min-width:1024px){ .contact-page-grid{grid-template-columns:5fr 7fr !important} }</style>
+    <section class="emerg-band"><div class="container"><div class="grid">
+      <div>
+        <div style="font-size:11px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:rgba(255,255,255,.7)">${esc(x.emergencyTitle)}</div>
+        <h2 style="margin-top:12px">${esc(x.emergencyTitle)}</h2>
+        <p style="margin-top:12px; color:rgba(255,255,255,.9); max-width:640px">${esc(x.emergencyBody)}</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px">
+        <a href="mailto:emergency@latviakharkiv.org" class="emerg-btn">emergency@latviakharkiv.org</a>
+        <a href="tel:+380670000000" style="display:inline-flex; align-items:center; justify-content:center; padding:14px 20px; border:1px solid rgba(255,255,255,.7); color:#fff; font-weight:600">+380 67 000 00 00</a>
+      </div>
+    </div></div></section>
+  </div>`;
+}
+
+/* ============================================================
+   Renderer dispatch
+   ============================================================ */
+const RENDERERS = {
+  'home': renderHome,
+  'consulate': renderConsulate,
+  'consular': renderConsular,
+  'latvia-kharkiv': renderLatviaKharkiv,
+  'business-bridge': renderBridge,
+  'innovation': renderInnovation,
+  'investment': renderInvestment,
+  'cooperation': renderCooperation,
+  'events': renderEvents,
+  'media': renderMedia,
+  'resources': renderResources,
+  'contact': renderContact,
+};
+
+/* ============================================================
+   Layout: header + main + footer
+   ============================================================ */
+function renderHeader(d, lang){
+  const items = [
+    ['home', d.nav.home], ['consulate', d.nav.consulate], ['consular', d.nav.consular],
+    ['latvia-kharkiv', d.nav.latviaKharkiv], ['business-bridge', d.nav.businessBridge],
+    ['innovation', d.nav.innovation], ['investment', d.nav.investment], ['cooperation', d.nav.cooperation],
+    ['events', d.nav.events], ['media', d.nav.media], ['resources', d.nav.resources], ['contact', d.nav.contact]
+  ];
+  return `
+  <header class="site">
+    ${FLAG}
+    <div class="container">
+      <div class="header-row">
+        <a href="#/home" class="brand" style="text-decoration:none; color:inherit">
+          ${BRAND_MARK}
+          <div class="brand-text">
+            <div class="t1">${esc(d.meta.honoraryConsulate)}</div>
+            <div class="t2">${esc(d.meta.republic)} · ${esc(d.meta.inKharkiv)}</div>
+          </div>
+        </a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          ${['uk','en','lv'].map(L=>`<button data-lang="${L}" class="${L===lang?'active':''}">${L==='uk'?'УКР':L.toUpperCase()}</button>`).join('')}
+        </div>
+        <button class="menu-toggle" aria-label="Menu" id="menuToggle"><span></span><span></span><span></span></button>
+      </div>
+      <nav class="primary" id="primaryNav">
+        ${items.map(([r,l])=>`<a href="#/${r}" data-route="${r}" class="${r===STATE.route?'active':''}">${esc(l)}</a>`).join('')}
+      </nav>
+    </div>
+  </header>`;
+}
+
+function renderFooter(d){
+  return `
+  <footer class="footer-wrap">
+    ${FLAG}
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div style="display:flex; align-items:center; gap:12px">
+              ${BRAND_MARK.replace('class="brand-mark"','class="brand-mark" style="width:40px;height:40px"')}
+              <div style="font-family:var(--font-display); font-weight:600; font-size:14px">${esc(d.meta.honoraryConsulate)}</div>
+            </div>
+            <p style="margin-top:16px; font-size:14px; color:var(--ink-muted); line-height:1.6">${esc(d.footer.tagline)}</p>
+            <p style="margin-top:16px; font-size:12px; color:var(--ink-muted)">${esc(d.footer.officialNote)}</p>
+          </div>
+          ${d.footer.columns.map(col=>`
+            <div class="footer-col">
+              <div class="label">${esc(col.title)}</div>
+              <ul>${col.items.map(i=>`<li><a href="#/${esc(i.href)}">${esc(i.label)}</a></li>`).join('')}</ul>
+            </div>`).join('')}
+        </div>
+        <div class="footer-legal">
+          <div>${esc(d.footer.copyright)}</div>
+          <div class="links">${d.footer.legalLinks.map(l=>`<a href="${esc(l.href)}">${esc(l.label)}</a>`).join('')}</div>
+        </div>
+      </div>
+    </div>
+  </footer>`;
+}
+
+/* ============================================================
+   Boot / render / routing
+   ============================================================ */
+function render(){
+  const d = DICT[STATE.lang];
+  document.documentElement.lang = STATE.lang;
+  document.title = d.meta.siteTitle;
+  const app = document.getElementById('app');
+  app.innerHTML = renderHeader(d, STATE.lang) + '<main>' + (RENDERERS[STATE.route] || renderHome)(d) + '</main>' + renderFooter(d);
+  // language switch
+  app.querySelectorAll('.lang-switch button').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      STATE.lang = b.dataset.lang;
+      localStorage.setItem('lang', STATE.lang);
+      render();
+      window.scrollTo({top:0, behavior:'instant'});
+    });
+  });
+  // mobile menu
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('primaryNav');
+  if(toggle){
+    toggle.addEventListener('click', ()=>{
+      nav.classList.toggle('mobile-open');
+      toggle.classList.toggle('open');
+    });
+  }
+  // close mobile on nav click
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
+    nav.classList.remove('mobile-open');
+    if(toggle) toggle.classList.remove('open');
+  }));
+}
+
+function handleHash(){
+  const raw = (location.hash.replace(/^#\/?/, '') || 'home').split('/')[0];
+  const r = ROUTES.includes(raw) ? raw : 'home';
+  if(r !== STATE.route){
+    STATE.route = r;
+    render();
+    window.scrollTo({top:0, behavior:'instant'});
+  } else {
+    // re-highlight nav
+    document.querySelectorAll('nav.primary a').forEach(a=>{
+      a.classList.toggle('active', a.dataset.route === r);
+    });
+  }
+}
+
+window.addEventListener('hashchange', handleHash);
+document.addEventListener('DOMContentLoaded', ()=>{
+  const raw = (location.hash.replace(/^#\/?/, '') || 'home').split('/')[0];
+  STATE.route = ROUTES.includes(raw) ? raw : 'home';
+  render();
+});
+</script>
+</body>
+</html>

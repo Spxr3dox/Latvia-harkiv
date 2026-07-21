@@ -5,34 +5,47 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Latvian state red — Pantone 201C, official carmine of the Latvian flag,
-        // as used across mfa.gov.lv and other .gov.lv properties.
+        // Diplomatic blue palette — white + blue, per client preference.
         brand: {
-          50: "#fbf3f4",
-          100: "#f5e0e2",
-          200: "#e8b6bb",
-          300: "#d78893",
-          400: "#c25c6b",
-          500: "#a83848",
-          600: "#9e3039",
-          700: "#7a1f27", // deep hover / accents
-          800: "#5c161d",
-          900: "#3d0f13",
+          50: "#eef3fb",
+          100: "#d8e3f4",
+          200: "#b3c7e9",
+          300: "#89a6db",
+          400: "#6187c9",
+          500: "#4272bd",
+          600: "#1e4d8f",
+          700: "#14396b",
+          800: "#0e2a4f",
+          900: "#0a1f3b",
         },
         ink: {
-          DEFAULT: "#1a1a1a",
-          soft: "#3a3a3a",
-          muted: "#6b6b6b",
+          DEFAULT: "#0f1c2e",
+          soft: "#2b3a52",
+          muted: "#5c6b83",
         },
         surface: {
           DEFAULT: "#ffffff",
-          alt: "#faf7f5",
-          border: "#e7e2df",
+          alt: "#f4f7fc",
+          border: "#dbe4f0",
         },
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         display: ["var(--font-display)", "Georgia", "serif"],
+      },
+      borderRadius: {
+        DEFAULT: "14px",
+        sm: "8px",
+        md: "12px",
+        lg: "18px",
+        xl: "22px",
+        "2xl": "28px",
+      },
+      boxShadow: {
+        sm: "0 1px 2px rgba(20,57,107,.06)",
+        DEFAULT: "0 4px 18px -6px rgba(20,57,107,.12)",
+        md: "0 4px 18px -6px rgba(20,57,107,.12)",
+        lg: "0 20px 40px -20px rgba(20,57,107,.25)",
       },
       maxWidth: {
         content: "1200px",

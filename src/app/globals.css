@@ -4,15 +4,23 @@
 
 @layer base {
   :root {
-    --brand-600: #9e3039;
-    --brand-700: #7a1f27;
-    --ink: #1a1a1a;
-    --ink-soft: #3a3a3a;
-    --ink-muted: #6b6b6b;
+    --brand-500: #4272bd;
+    --brand-600: #1e4d8f;
+    --brand-700: #14396b;
+    --ink: #0f1c2e;
+    --ink-soft: #2b3a52;
+    --ink-muted: #5c6b83;
     --surface: #ffffff;
-    --surface-alt: #faf7f5;
-    --border: #e7e2df;
-    --focus: #9e3039;
+    --surface-alt: #f4f7fc;
+    --border: #dbe4f0;
+    --focus: #1e4d8f;
+    --radius-sm: 8px;
+    --radius: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --shadow-sm: 0 1px 2px rgba(20, 57, 107, 0.06);
+    --shadow: 0 4px 18px -6px rgba(20, 57, 107, 0.12);
+    --shadow-lg: 0 20px 40px -20px rgba(20, 57, 107, 0.25);
   }
 
   html,
@@ -27,7 +35,7 @@
   :focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 
   h1,
@@ -59,22 +67,23 @@
     width: 22px;
     height: 2px;
     background: currentColor;
+    border-radius: 2px;
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-none bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-700;
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 hover:-translate-y-0.5 shadow-sm hover:shadow;
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 rounded-none border border-ink px-5 py-3 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white;
+    @apply inline-flex items-center gap-2 rounded-full border border-brand-600 px-6 py-3 text-sm font-semibold text-brand-600 transition hover:bg-brand-600 hover:text-white;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-600;
+    @apply inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-500;
   }
 
   .card {
-    @apply block border border-surface-border bg-white p-6 transition hover:border-brand-600;
+    @apply block rounded-2xl border border-surface-border bg-white p-7 transition shadow-sm hover:border-brand-500 hover:-translate-y-1 hover:shadow-lg;
   }
 
   .link-underline {
@@ -85,5 +94,6 @@
     height: 3px;
     width: 48px;
     background: var(--brand-600);
+    border-radius: 2px;
   }
 }

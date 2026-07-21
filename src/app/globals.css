@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-600: #9e3039;
+    --brand-700: #7a1f27;
+    --ink: #1a1a1a;
+    --ink-soft: #3a3a3a;
+    --ink-muted: #6b6b6b;
+    --surface: #ffffff;
+    --surface-alt: #faf7f5;
+    --border: #e7e2df;
+    --focus: #9e3039;
+  }
+
+  html,
+  body {
+    background: var(--surface);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), Georgia, "Times New Roman", serif;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--brand-600);
+    color: #fff;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-content px-5 md:px-8;
+  }
+
+  .kicker {
+    @apply inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-brand-700 font-semibold;
+  }
+
+  .kicker::before {
+    content: "";
+    display: inline-block;
+    width: 22px;
+    height: 2px;
+    background: currentColor;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-none bg-brand-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-700;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded-none border border-ink px-5 py-3 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-1 text-sm font-semibold text-brand-700 hover:text-brand-600;
+  }
+
+  .card {
+    @apply block border border-surface-border bg-white p-6 transition hover:border-brand-600;
+  }
+
+  .link-underline {
+    @apply underline decoration-brand-600 decoration-2 underline-offset-4 hover:text-brand-700;
+  }
+
+  .divider-red {
+    height: 3px;
+    width: 48px;
+    background: var(--brand-600);
+  }
+}

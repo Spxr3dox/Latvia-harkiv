@@ -704,6 +704,22 @@ if(!['uk','en','lv'].includes(STATE.lang)) STATE.lang = 'uk';
 
 const ROUTES = ['home','consulate','consular','latvia-kharkiv','business-bridge','innovation','investment','cooperation','events','media','resources','contact'];
 
+// pushState works on http(s), not file://. On file:// we fall back to hash routing.
+const USE_HISTORY = location.protocol === 'http:' || location.protocol === 'https:';
+
+function routeToHref(route){
+  return USE_HISTORY ? '/' + (route === 'home' ? '' : route) : '#/' + route;
+}
+function parseCurrentRoute(){
+  let raw;
+  if(USE_HISTORY){
+    raw = location.pathname.replace(/^\//, '').split('/')[0] || 'home';
+  } else {
+    raw = (location.hash.replace(/^#\/?/, '') || 'home').split('/')[0];
+  }
+  return ROUTES.includes(raw) ? raw : 'home';
+}
+
 /* ============================================================
    SVG marks
    ============================================================ */
@@ -1349,12 +1365,47 @@ function renderFooter(d){
 /* ============================================================
    Boot / render / routing
    ============================================================ */
+function rewriteInternalLinks(root){
+  // Convert every href written as "#/route" into the current-mode href
+  // and intercept clicks to use pushState when supported.
+  root.querySelectorAll('a[href^="#/"]').forEach(a=>{
+    const route = a.getAttribute('href').replace(/^#\//,'').split('/')[0];
+    if(!ROUTES.includes(route)) return;
+    a.setAttribute('href', routeToHref(route));
+    a.dataset.internalRoute = route;
+  });
+  if(!USE_HISTORY) return;
+  root.addEventListener('click', (e)=>{
+    const a = e.target.closest('a[data-internal-route]');
+    if(!a) return;
+    if(e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    navigateTo(a.dataset.internalRoute);
+  });
+}
+
+function navigateTo(route){
+  if(!ROUTES.includes(route)) route = 'home';
+  const href = routeToHref(route);
+  if(USE_HISTORY){
+    if(location.pathname !== href) history.pushState({route}, '', href);
+  } else {
+    if(location.hash !== href) location.hash = href;
+  }
+  if(route !== STATE.route){
+    STATE.route = route;
+    render();
+    window.scrollTo({top:0, behavior:'instant'});
+  }
+}
+
 function render(){
   const d = DICT[STATE.lang];
   document.documentElement.lang = STATE.lang;
   document.title = d.meta.siteTitle;
   const app = document.getElementById('app');
   app.innerHTML = renderHeader(d, STATE.lang) + '<main>' + (RENDERERS[STATE.route] || renderHome)(d) + '</main>' + renderFooter(d);
+  rewriteInternalLinks(app);
   // language switch
   app.querySelectorAll('.lang-switch button').forEach(b=>{
     b.addEventListener('click', ()=>{
@@ -1373,32 +1424,29 @@ function render(){
       toggle.classList.toggle('open');
     });
   }
-  // close mobile on nav click
   nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{
     nav.classList.remove('mobile-open');
     if(toggle) toggle.classList.remove('open');
   }));
 }
 
-function handleHash(){
-  const raw = (location.hash.replace(/^#\/?/, '') || 'home').split('/')[0];
-  const r = ROUTES.includes(raw) ? raw : 'home';
+function handleRouteChange(){
+  const r = parseCurrentRoute();
   if(r !== STATE.route){
     STATE.route = r;
     render();
     window.scrollTo({top:0, behavior:'instant'});
   } else {
-    // re-highlight nav
     document.querySelectorAll('nav.primary a').forEach(a=>{
       a.classList.toggle('active', a.dataset.route === r);
     });
   }
 }
 
-window.addEventListener('hashchange', handleHash);
+window.addEventListener('popstate', handleRouteChange);
+window.addEventListener('hashchange', handleRouteChange);
 document.addEventListener('DOMContentLoaded', ()=>{
-  const raw = (location.hash.replace(/^#\/?/, '') || 'home').split('/')[0];
-  STATE.route = ROUTES.includes(raw) ? raw : 'home';
+  STATE.route = parseCurrentRoute();
   render();
 });
 </script>

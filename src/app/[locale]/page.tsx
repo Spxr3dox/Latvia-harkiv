@@ -19,7 +19,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           className="absolute inset-0 -z-10 opacity-[0.04]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 90% 0%, #9e3039 0%, transparent 45%), radial-gradient(circle at 0% 100%, #9e3039 0%, transparent 40%)",
+              "radial-gradient(circle at 90% 0%, #1e4d8f 0%, transparent 45%), radial-gradient(circle at 0% 100%, #1e4d8f 0%, transparent 40%)",
           }}
         />
         <div className="container-x grid gap-10 py-16 md:py-24 lg:grid-cols-12">

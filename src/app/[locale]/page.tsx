@@ -70,10 +70,12 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           <div className="grid gap-10 md:grid-cols-12 items-start">
             <div className="md:col-span-4">
               <div className="kicker">{dict.home.welcomeTitle}</div>
-              <div className="mt-6 h-40 w-40 bg-white border border-surface-border flex items-center justify-center">
-                <div className="text-center text-ink-muted text-xs px-4">
-                  Фото Почесного консула
-                </div>
+              <div className="mt-6 h-48 w-48 overflow-hidden rounded-2xl border border-surface-border bg-white shadow-sm">
+                <img
+                  src="/anton.jpg"
+                  alt={dict.home.welcomeSignature}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="mt-4 font-display font-semibold">{dict.home.welcomeSignature}</div>
               <div className="text-sm text-ink-muted">{dict.home.welcomeRole}</div>

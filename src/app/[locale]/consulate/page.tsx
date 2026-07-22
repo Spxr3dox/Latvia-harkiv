@@ -37,10 +37,17 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
               ))}
             </ul>
           </div>
-          <div className="bg-white border border-surface-border p-8">
-            <div className="kicker">{d.consul.title}</div>
-            <h2 className="mt-4 font-display text-2xl font-semibold">{d.consul.name}</h2>
-            <div className="text-brand-700 font-semibold text-sm mt-1">{d.consul.role}</div>
+          <div className="bg-white border border-surface-border p-8 rounded-2xl">
+            <div className="flex items-start gap-5">
+              <div className="h-24 w-24 shrink-0 overflow-hidden rounded-2xl border border-surface-border shadow-sm">
+                <img src="/anton.jpg" alt={d.consul.name} className="h-full w-full object-cover" />
+              </div>
+              <div>
+                <div className="kicker">{d.consul.title}</div>
+                <h2 className="mt-2 font-display text-2xl font-semibold">{d.consul.name}</h2>
+                <div className="text-brand-700 font-semibold text-sm mt-1">{d.consul.role}</div>
+              </div>
+            </div>
             <p className="mt-4 text-ink-soft leading-relaxed">{d.consul.bio}</p>
           </div>
         </div>

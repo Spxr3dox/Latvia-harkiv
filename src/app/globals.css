@@ -4,16 +4,16 @@
 
 @layer base {
   :root {
-    --brand-500: #5b8ce4;
-    --brand-600: #3a72c7;
-    --brand-700: #2a5aa0;
+    --brand-500: #4fa1e6;
+    --brand-600: #4a90d9;
+    --brand-700: #3a7fc0;
     --ink: #0f1c2e;
     --ink-soft: #2b3a52;
     --ink-muted: #5c6b83;
     --surface: #ffffff;
     --surface-alt: #f4f7fc;
     --border: #dbe4f0;
-    --focus: #3a72c7;
+    --focus: #4a90d9;
     --radius-sm: 8px;
     --radius: 14px;
     --radius-lg: 20px;

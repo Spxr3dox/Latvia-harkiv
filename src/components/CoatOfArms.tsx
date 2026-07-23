@@ -18,9 +18,9 @@ export function BrandMark({ className = "" }: { className?: string }) {
 export function FlagStripe({ className = "" }: { className?: string }) {
   return (
     <div className={`flex flex-col ${className}`} aria-hidden>
-      <div className="h-[6px] bg-[#1e4d8f]" />
+      <div className="h-[6px] bg-[#3a72c7]" />
       <div className="h-[3px] bg-white" />
-      <div className="h-[6px] bg-[#1e4d8f]" />
+      <div className="h-[6px] bg-[#3a72c7]" />
     </div>
   );
 }

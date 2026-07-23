@@ -7,16 +7,16 @@ const config: Config = {
       colors: {
         // Diplomatic blue palette — white + blue, per client preference.
         brand: {
-          50: "#eef3fb",
-          100: "#d8e3f4",
-          200: "#b3c7e9",
-          300: "#89a6db",
-          400: "#6187c9",
-          500: "#4272bd",
-          600: "#1e4d8f",
-          700: "#14396b",
-          800: "#0e2a4f",
-          900: "#0a1f3b",
+          50: "#f0f6ff",
+          100: "#dfeaff",
+          200: "#c1d7ff",
+          300: "#9bbcf7",
+          400: "#7aa4ef",
+          500: "#5b8ce4",
+          600: "#3a72c7",
+          700: "#2a5aa0",
+          800: "#1f4680",
+          900: "#173562",
         },
         ink: {
           DEFAULT: "#0f1c2e",
